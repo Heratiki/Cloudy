@@ -101,3 +101,7 @@ AltServer signs Apps remotely, and will do it whenever it sees your iDevice on t
 9. Leave ALTSERVER RUNNING (on your Mac) to sideload any App or re-sign them before expiration!
 10. If you are tired of connecting your iDevice to a Mac every time, you can do this remotely by checking “Sync this iPhone/iPad over Wi-Fi” in iTunes. Then install the mail-plugin on your Mac by clicking AltServer icon -> install mail plugin. Make sure that your Mac and the iDevice are connected to the same Wi-Fi network.
 11. AltServer signs the Apps remotely, and will do it whenever it sees your device on the network, so make sure that AltServer running when you re-sign your Apps.
+
+### Mac video guide
+
+[![](https://img.youtube.com/vi/IcerGfOW0iE/0.jpg)](https://www.youtube.com/watch?v=IcerGfOW0iE)
