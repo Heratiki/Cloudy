@@ -1,0 +1,24 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CloudyLibrary
+@_exported import CloudyLibrary
+import Foundation
+import GameController
+import Swift
+extension GCExtendedGamepad {
+  public enum JsonType {
+    case regular
+    case geforceNow
+    public static func == (a: GameController.GCExtendedGamepad.JsonType, b: GameController.GCExtendedGamepad.JsonType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public static var id: Swift.String {
+    get
+  }
+  public func toJson(for type: GameController.GCExtendedGamepad.JsonType) -> Swift.String?
+}
+extension GameController.GCExtendedGamepad.JsonType : Swift.Equatable {}
+extension GameController.GCExtendedGamepad.JsonType : Swift.Hashable {}

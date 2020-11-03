@@ -1,0 +1,11 @@
+framework module CloudyLibrary {
+  umbrella header "CloudyLibrary.h"
+
+  export *
+  module * { export * }
+}
+
+module CloudyLibrary.Swift {
+    header "CloudyLibrary-Swift.h"
+    requires objc
+}
