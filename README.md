@@ -70,12 +70,13 @@ An Intel-based Mac running macOS Catalina 10.15.4 or later & Version 12.1 (12A74
 2. Download AltServer (requires Windows 10) from here: https://altstore.io/
 3. After installing AltServer, connect your iPhone/iPad with your PC by USB connection. 
 4. Open AltServer, and it will open in the hidden icon tray located on the right side of your taskbar (the dropdown button that looks like an up arrow, beside the volume speaker.) and click the AltServer icon (looks like a diamond).
+![](Media/statusbar_win.png)
 5. Making sure your phone is plugged in, install AltStore to your phone through this menu. You will be prompted to login to your iCloud account.
 6. Once you login to your iCloud account and click through any remaining dialog boxes, AltStore will be installed on your phone.
 **LEAVE ALTSERVER RUNNING ON YOUR PC!**
 AltServer signs Apps remotely, and will do it whenever it sees your iDevice on the same network, so make sure that it stays running so you can continue to use your Apps without issue.
 7. Download the latest **.ipa** file as provided from our [Discord](https://discord.gg/9sgTxFx) server
-(Tip: Download it directly on your device and save it in the Files App. Then click and launch it directly in AltStore)
+**(Tip: Download it directly on your device and save it in the Files App. Then click and launch it directly in AltStore)**
 ![](Media/filesapp.png)
 8. Open AltStore on your device, and navigate to the “My Apps” tab.
 (In order to launch the AltStore App, make sure that you have trusted the profile in Settings)
@@ -87,12 +88,13 @@ AltServer signs Apps remotely, and will do it whenever it sees your iDevice on t
 ### Mac
 
 1. Download AltServer (for Mac macOS 10.14.4+) here: https://altstore.io/
-2. After installing AltServer, plug your phone into your Mac. Once your phone is connected, you can click the AltServer on your status bar (diamond shaped icon) -> install AltStore -> choose your device ->enter your iCloud account info (to assign AltSotre). 
-3. After installing AltStore, the App will show up in your iPad/iPhone. You will need to “activate” the App by going to setting->General->Device Management->to allow the App with iCloud account you put in the previous step (3)
-4. Download the latest **.ipa** file as provided from our [Discord](https://discord.gg/9sgTxFx) server
-(Tip: Download it directly on your device and save it in the Files App. Then click and launch it directly in AltStore)
+2. After installing AltServer to your Mac, plug your iPhone/iPad into your Mac. Once your phone is connected, you can click the AltServer on your status bar ◇ (diamond shaped icon) -> `Install AltStore` -> `choose your device` -> enter your iCloud account info (to assign AltSotre). 
+![](Media/statusbar_mac.png)
+3. After installing AltStore, the App will show up in your iPad/iPhone. You will need to “activate” the App by going to `System settings` -> `General` -> `Device Management` -> to allow the App with iCloud account you put in the previous step (3).
+4. Download the latest **.ipa** file as provided from our [Discord](https://discord.gg/9sgTxFx) server and unzip it.
+**(Tip: Download it directly on your iPhone/iPad and save it in the Files App. Then click and select to open it directly in AltStore)**
 ![](Media/filesapp.png)
-5. Open AltStore on your device, and navigate to the “My Apps” tab.
+5. Open AltStore on your device, and navigate to the `My Apps` tab.
 (In order to launch the AltStore App, make sure that you have trusted the profile in Settings)
 ![](Media/altstore.png)
 6. Press the “+” button in the top left corner of the screen.
