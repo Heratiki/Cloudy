@@ -4,8 +4,26 @@ import Foundation
 import WebKit
 import GameController
 
+
 /// Main module that connects the web views controller scripts to the native controller handling
-class WebViewControllerBridge: NSObject, WKScriptMessageHandlerWithReply {
+@objc class WebViewControllerBridge: NSObject, WKScriptMessageHandlerWithReply {
+
+    @objc public static func submit(controllerNumber: CShort, activeGamepadMask: CShort,
+                                    buttonFlags: CShort, leftTrigger: CUnsignedChar, rightTrigger: CUnsignedChar,
+                                    leftStickX: CShort, leftStickY: CShort, rightStickX: CShort, rightStickY: CShort) {
+        virtualController = CloudyController.createFrom(controllerNumber: controllerNumber,
+                                                        activeGamepadMask: activeGamepadMask,
+                                                        buttonFlags: buttonFlags,
+                                                        leftTrigger: leftTrigger,
+                                                        rightTrigger: rightTrigger,
+                                                        leftStickX: leftStickX,
+                                                        leftStickY: leftStickY,
+                                                        rightStickX: rightStickX,
+                                                        rightStickY: rightStickY)
+    }
+
+    /// TODO REMOVE THIS HACK
+    static var virtualController: CloudyController? = nil
 
     /// Remember last controller snapshot
     var lastControllerSnapshot: GCExtendedGamepad?         = nil
@@ -17,6 +35,13 @@ class WebViewControllerBridge: NSObject, WKScriptMessageHandlerWithReply {
     func userContentController(_ userContentController: WKUserContentController,
                                didReceive message: WKScriptMessage,
                                replyHandler: @escaping (Any?, String?) -> Void) {
+        //////////////////// VIRTUAL CONTROLLER
+        if let virtualController = WebViewControllerBridge.virtualController {
+            replyHandler(virtualController.jsonString, nil)
+            return
+        }
+
+        //////////////////// PHYSICAL CONTROLLER
         // early exit
         guard let currentControllerState = GCController.controllers().first?.extendedGamepad else {
             replyHandler(nil, nil)

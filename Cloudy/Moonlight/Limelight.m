@@ -5,6 +5,7 @@
 #include <Foundation/Foundation.h>
 #include "Limelight.h"
 #include "Logger.h"
+#include "Cloudy-Swift.h"
 
 // This function queues a relative mouse move event to be sent to the remote server.
 int LiSendMouseMoveEvent(short deltaX, short deltaY)
@@ -63,7 +64,18 @@ int LiSendMultiControllerEvent(short controllerNumber, short activeGamepadMask,
                                short buttonFlags, unsigned char leftTrigger, unsigned char rightTrigger,
                                short leftStickX, short leftStickY, short rightStickX, short rightStickY)
 {
-    Log(LOG_I, @"LiSendMultiControllerEvent");
+    Log(LOG_I, [NSString stringWithFormat:@"LiSendMultiControllerEvent: %i, %i, %i, %i, %i, %i, %i, %i, %i",
+                                          controllerNumber, activeGamepadMask, buttonFlags, leftTrigger, rightTrigger,
+                                          leftStickX, leftStickY, rightStickX, rightStickY]);
+    [WebViewControllerBridge submitWithControllerNumber:controllerNumber
+                             activeGamepadMask:activeGamepadMask
+                             buttonFlags:buttonFlags
+                             leftTrigger:leftTrigger
+                             rightTrigger:rightTrigger
+                             leftStickX:leftStickX
+                             leftStickY:leftStickY
+                             rightStickX:rightStickX
+                             rightStickY:rightStickY];
     return 0;
 }
 
