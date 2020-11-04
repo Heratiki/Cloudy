@@ -19,8 +19,9 @@
 		44A4DD02B25D92ECC2A0C48F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D425AA9492A7F66964BC /* Config.swift */; };
 		44A4DD2F10965A88D83F5C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4DBCCBA86600B436045E4 /* SceneDelegate.swift */; };
 		5CDDBA53FB1B62159C8668EF /* Pods_Cloudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF8562B1619F13A7254171F /* Pods_Cloudy.framework */; };
-		E740FE88254B641200533472 /* CloudyLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E740FE87254B641200533472 /* CloudyLibrary.xcframework */; };
-		E740FE89254B641200533472 /* CloudyLibrary.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E740FE87254B641200533472 /* CloudyLibrary.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E712FF9825520978003CF78C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E712FF9725520978003CF78C /* Images.xcassets */; };
+		E723D44525532973007413D9 /* CloudyLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E723D44425532973007413D9 /* CloudyLibrary.framework */; };
+		E723D44625532973007413D9 /* CloudyLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E723D44425532973007413D9 /* CloudyLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E776E038254AE08E00684328 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E776E037254AE08E00684328 /* GoogleService-Info.plist */; };
 		E7B87E2B25338121004358E3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B87E2A25338121004358E3 /* RootViewController.swift */; };
 		E7B87E2E25338121004358E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B87E2C25338121004358E3 /* Main.storyboard */; };
@@ -29,13 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E7E6201C2549661900DD1BD0 /* Embed Frameworks */ = {
+		E723D44725532973007413D9 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E740FE89254B641200533472 /* CloudyLibrary.xcframework in Embed Frameworks */,
+				E723D44625532973007413D9 /* CloudyLibrary.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,6 +58,8 @@
 		44A4DBCCBA86600B436045E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		79B35440DA7901C4949EFDC7 /* Pods-Cloudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cloudy.release.xcconfig"; path = "Target Support Files/Pods-Cloudy/Pods-Cloudy.release.xcconfig"; sourceTree = "<group>"; };
 		B42B0FEC073AD10E0FCA6CF1 /* Pods-Cloudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cloudy.debug.xcconfig"; path = "Target Support Files/Pods-Cloudy/Pods-Cloudy.debug.xcconfig"; sourceTree = "<group>"; };
+		E712FF9725520978003CF78C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E723D44425532973007413D9 /* CloudyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CloudyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E740FE87254B641200533472 /* CloudyLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CloudyLibrary.xcframework; path = Frameworks/Cloudy/CloudyLibrary.xcframework; sourceTree = "<group>"; };
 		E776E037254AE08E00684328 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7B87E2325338121004358E3 /* Cloudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cloudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,8 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E723D44525532973007413D9 /* CloudyLibrary.framework in Frameworks */,
 				5CDDBA53FB1B62159C8668EF /* Pods_Cloudy.framework in Frameworks */,
-				E740FE88254B641200533472 /* CloudyLibrary.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +142,7 @@
 		E7B87E2525338121004358E3 /* Cloudy */ = {
 			isa = PBXGroup;
 			children = (
+				E712FF9725520978003CF78C /* Images.xcassets */,
 				E776E037254AE08E00684328 /* GoogleService-Info.plist */,
 				E7B87E2A25338121004358E3 /* RootViewController.swift */,
 				E7B87E2C25338121004358E3 /* Main.storyboard */,
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				E740FE87254B641200533472 /* CloudyLibrary.xcframework */,
+				E723D44425532973007413D9 /* CloudyLibrary.framework */,
 				1BF8562B1619F13A7254171F /* Pods_Cloudy.framework */,
 			);
 			name = Frameworks;
@@ -175,9 +180,9 @@
 				E7B87E1F25338121004358E3 /* Sources */,
 				E7B87E2025338121004358E3 /* Frameworks */,
 				E7B87E2125338121004358E3 /* Resources */,
-				E7E6201C2549661900DD1BD0 /* Embed Frameworks */,
 				8877838D2666C00640B177EB /* [CP] Embed Pods Frameworks */,
 				E7D0EC47254AE1B90073892F /* Crashlytics */,
+				E723D44725532973007413D9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7B87E3325338124004358E3 /* LaunchScreen.storyboard in Resources */,
+				E712FF9825520978003CF78C /* Images.xcassets in Resources */,
 				E776E038254AE08E00684328 /* GoogleService-Info.plist in Resources */,
 				E7B87E3025338124004358E3 /* Assets.xcassets in Resources */,
 				E7B87E2E25338121004358E3 /* Main.storyboard in Resources */,
