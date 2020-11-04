@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44A4D01B0487765908ADFCC8 /* CloudyGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D70BD73D663A3E27A322 /* CloudyGameController.swift */; };
 		44A4D07E127721BBFE3C3EA5 /* WebViewControllerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D67F8889E455A547CB96 /* WebViewControllerBridge.swift */; };
 		44A4D0FBB22CC22B053573C3 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D8A659024EF865AEB5D4 /* UIView.swift */; };
 		44A4D13A82DE5B9006FED3DC /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D58266EE8EF012AEA979 /* Navigator.swift */; };
@@ -14,14 +15,13 @@
 		44A4D7DCB15B8C4799D56BCA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D0057BF82C52A8F76A38 /* String.swift */; };
 		44A4D8885DB5BE5C73C9FB87 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D3A1BA3A8B2AB96CB81B /* UserDefaults.swift */; };
 		44A4D8940EA58BA835224F08 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D28CC8536DDE9F1F0250 /* WKWebView.swift */; };
+		44A4DB4BEAB929481B3024E4 /* CloudyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D27EF5AD15611DBEC689 /* CloudyController.swift */; };
 		44A4DB830BC41F131E122F7C /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D999AA39891699C55D00 /* GameController.swift */; };
 		44A4DC86DF1DDD05E6FC802A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D58736385FBD2B75856B /* MenuViewController.swift */; };
 		44A4DD02B25D92ECC2A0C48F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D425AA9492A7F66964BC /* Config.swift */; };
 		44A4DD2F10965A88D83F5C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4DBCCBA86600B436045E4 /* SceneDelegate.swift */; };
 		5CDDBA53FB1B62159C8668EF /* Pods_Cloudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF8562B1619F13A7254171F /* Pods_Cloudy.framework */; };
 		E712FF9825520978003CF78C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E712FF9725520978003CF78C /* Images.xcassets */; };
-		E723D44525532973007413D9 /* CloudyLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E723D44425532973007413D9 /* CloudyLibrary.framework */; };
-		E723D44625532973007413D9 /* CloudyLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E723D44425532973007413D9 /* CloudyLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E776E038254AE08E00684328 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E776E037254AE08E00684328 /* GoogleService-Info.plist */; };
 		E7B87E2B25338121004358E3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B87E2A25338121004358E3 /* RootViewController.swift */; };
 		E7B87E2E25338121004358E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B87E2C25338121004358E3 /* Main.storyboard */; };
@@ -29,29 +29,17 @@
 		E7B87E3325338124004358E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B87E3125338124004358E3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		E723D44725532973007413D9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E723D44625532973007413D9 /* CloudyLibrary.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		1BF8562B1619F13A7254171F /* Pods_Cloudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cloudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A4D0057BF82C52A8F76A38 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		44A4D27EF5AD15611DBEC689 /* CloudyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudyController.swift; sourceTree = "<group>"; };
 		44A4D28CC8536DDE9F1F0250 /* WKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
 		44A4D3A1BA3A8B2AB96CB81B /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		44A4D425AA9492A7F66964BC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		44A4D58266EE8EF012AEA979 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		44A4D58736385FBD2B75856B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		44A4D67F8889E455A547CB96 /* WebViewControllerBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewControllerBridge.swift; sourceTree = "<group>"; };
+		44A4D70BD73D663A3E27A322 /* CloudyGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudyGameController.swift; sourceTree = "<group>"; };
 		44A4D8A659024EF865AEB5D4 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		44A4D965A769BDED09733089 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44A4D999AA39891699C55D00 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
@@ -75,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E723D44525532973007413D9 /* CloudyLibrary.framework in Frameworks */,
 				5CDDBA53FB1B62159C8668EF /* Pods_Cloudy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +97,15 @@
 				44A4D58266EE8EF012AEA979 /* Navigator.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		44A4D8E4BB9122C880E271A0 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D27EF5AD15611DBEC689 /* CloudyController.swift */,
+				44A4D70BD73D663A3E27A322 /* CloudyGameController.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		CAC63E443E260BECDB6A0652 /* Pods */ = {
@@ -155,6 +151,7 @@
 				44A4D54D8E4FC726157DAB44 /* Model */,
 				44A4D1438C45504101E3F0F6 /* App */,
 				44A4D58736385FBD2B75856B /* MenuViewController.swift */,
+				44A4D8E4BB9122C880E271A0 /* Library */,
 			);
 			path = Cloudy;
 			sourceTree = "<group>";
@@ -182,7 +179,6 @@
 				E7B87E2125338121004358E3 /* Resources */,
 				8877838D2666C00640B177EB /* [CP] Embed Pods Frameworks */,
 				E7D0EC47254AE1B90073892F /* Crashlytics */,
-				E723D44725532973007413D9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,6 +316,8 @@
 				44A4D7DCB15B8C4799D56BCA /* String.swift in Sources */,
 				44A4D13A82DE5B9006FED3DC /* Navigator.swift in Sources */,
 				44A4DC86DF1DDD05E6FC802A /* MenuViewController.swift in Sources */,
+				44A4DB4BEAB929481B3024E4 /* CloudyController.swift in Sources */,
+				44A4D01B0487765908ADFCC8 /* CloudyGameController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
