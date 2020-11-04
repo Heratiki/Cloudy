@@ -7,14 +7,15 @@ extension UserDefaults {
 
     /// Some keys for the user defaults
     private struct Config {
-        static let lastVisitedUrlKey  = "lastVisitedUrlKey"
-        static let manualUserAgent    = "manualUserAgent"
-        static let useManualUserAgent = "useManualUserAgent"
-        static let allowInlineMedia   = "allowInlineMedia"
+        static let lastVisitedUrlKey      = "lastVisitedUrlKey"
+        static let manualUserAgent        = "manualUserAgent"
+        static let useManualUserAgent     = "useManualUserAgent"
+        static let allowInlineMedia       = "allowInlineMedia"
+        static let showOnScreenController = "showOnScreenController"
     }
 
     /// Read / write the last visited url
-    var lastVisitedUrl:     URL? {
+    var lastVisitedUrl:         URL? {
         get {
             UserDefaults.standard.url(forKey: Config.lastVisitedUrlKey)
         }
@@ -24,7 +25,7 @@ extension UserDefaults {
     }
 
     /// Read / write the manually overwritten user agent
-    var manualUserAgent:    String? {
+    var manualUserAgent:        String? {
         get {
             UserDefaults.standard.string(forKey: Config.manualUserAgent)
         }
@@ -34,7 +35,7 @@ extension UserDefaults {
     }
 
     /// Read / write the flag if the manual user agent should be used
-    var useManualUserAgent: Bool {
+    var useManualUserAgent:     Bool {
         get {
             if UserDefaults.standard.object(forKey: Config.useManualUserAgent) == nil {
                 return false
@@ -47,7 +48,7 @@ extension UserDefaults {
     }
 
     /// Read / write allow inline media enabled flag
-    var allowInlineMedia:   Bool {
+    var allowInlineMedia:       Bool {
         get {
             if UserDefaults.standard.object(forKey: Config.allowInlineMedia) == nil {
                 return true
@@ -56,6 +57,19 @@ extension UserDefaults {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Config.allowInlineMedia)
+        }
+    }
+
+    /// Read / write flag for on screen controller
+    var showOnScreenController: Bool {
+        get {
+            if UserDefaults.standard.object(forKey: Config.showOnScreenController) == nil {
+                return false
+            }
+            return UserDefaults.standard.bool(forKey: Config.showOnScreenController)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Config.showOnScreenController)
         }
     }
 

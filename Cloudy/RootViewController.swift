@@ -9,10 +9,15 @@ class FullScreenWKWebView: WKWebView {
     }
 }
 
-class RootViewController: UIViewController {
+protocol OnScreenControllerUpdater {
+    func updateOnScreenController()
+}
+
+class RootViewController: UIViewController, OnScreenControllerUpdater {
 
     /// Containers
-    @IBOutlet var containerWebView: UIView!
+    @IBOutlet var containerWebView:            UIView!
+    @IBOutlet var containerOnScreenController: UIView!
 
     /// The hacked webView
     private var webView:   FullScreenWKWebView!
@@ -72,26 +77,33 @@ class RootViewController: UIViewController {
         menuViewController.view.alpha = 0
         menuViewController.webController = webView
         menuViewController.overlayController = self
+        menuViewController.onScreenControllerUpdater = self
         menuViewController.view.frame = view.bounds
         menuViewController.willMove(toParent: self)
         addChild(menuViewController)
         view.addSubview(menuViewController.view)
         menuViewController.didMove(toParent: self)
+    }
 
-        /// Onscreen controls container
-        let onscreenContainer = UIView(frame: view.bounds)
-        view.addSubview(onscreenContainer)
-        onscreenContainer.fillParent()
+    /// View layout already done
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         // stream config
         let streamConfig      = StreamConfiguration()
         // Controller support
         let controllerSupport = ControllerSupport(config: streamConfig, presenceDelegate: self)
         // stream view
-        let streamView        = StreamView(frame: onscreenContainer.bounds)
+        let streamView        = StreamView(frame: containerOnScreenController.bounds)
         streamView.setupStreamView(controllerSupport, interactionDelegate: self, config: streamConfig)
         streamView.showOnScreenControls()
-        onscreenContainer.addSubview(streamView)
+        containerOnScreenController.addSubview(streamView)
         streamView.fillParent()
+        updateOnScreenController()
+    }
+
+    /// Update visibility of onscreen controller
+    func updateOnScreenController() {
+        containerOnScreenController.alpha = UserDefaults.standard.showOnScreenController ? 1 : 0
     }
 
     /// Tapped on the menu item

@@ -26,21 +26,23 @@ protocol OverlayController {
 class MenuViewController: UIViewController {
 
     /// View references
-    @IBOutlet weak var userAgentTextField:  UITextField!
-    @IBOutlet weak var manualUserAgent:     UISwitch!
-    @IBOutlet weak var addressBar:          UITextField!
-    @IBOutlet weak var backButton:          UIButton!
-    @IBOutlet weak var forwardButton:       UIButton!
-    @IBOutlet weak var buttonGeforceNow:    UIImageView!
-    @IBOutlet weak var buttonStadia:        UIImageView!
-    @IBOutlet weak var buttonBoosteroid:    UIImageView!
-    @IBOutlet weak var buttonPatreon:       UIImageView!
-    @IBOutlet weak var buttonPayPal:        UIImageView!
-    @IBOutlet weak var allowInlineFeedback: UISwitch!
+    @IBOutlet weak var userAgentTextField:       UITextField!
+    @IBOutlet weak var manualUserAgent:          UISwitch!
+    @IBOutlet weak var addressBar:               UITextField!
+    @IBOutlet weak var backButton:               UIButton!
+    @IBOutlet weak var forwardButton:            UIButton!
+    @IBOutlet weak var buttonGeforceNow:         UIImageView!
+    @IBOutlet weak var buttonStadia:             UIImageView!
+    @IBOutlet weak var buttonBoosteroid:         UIImageView!
+    @IBOutlet weak var buttonPatreon:            UIImageView!
+    @IBOutlet weak var buttonPayPal:             UIImageView!
+    @IBOutlet weak var allowInlineFeedback:      UISwitch!
+    @IBOutlet weak var onScreenControllerSwitch: UISwitch!
 
     /// Some injections
-    var webController:     WebController?
-    var overlayController: OverlayController?
+    var webController:             WebController?
+    var overlayController:         OverlayController?
+    var onScreenControllerUpdater: OnScreenControllerUpdater?
 
     /// By default hide the status bar
     override var prefersStatusBarHidden: Bool {
@@ -72,6 +74,7 @@ class MenuViewController: UIViewController {
         userAgentTextField.text = UserDefaults.standard.manualUserAgent
         manualUserAgent.isOn = UserDefaults.standard.useManualUserAgent
         allowInlineFeedback.isOn = UserDefaults.standard.allowInlineMedia
+        onScreenControllerSwitch.isOn = UserDefaults.standard.showOnScreenController
     }
 }
 
@@ -150,6 +153,12 @@ extension MenuViewController {
     /// User agent value changed
     @IBAction func onUserAgentValueChanged(_ sender: Any) {
         UserDefaults.standard.manualUserAgent = userAgentTextField.text
+    }
+
+    /// On screen controller changed
+    @IBAction func onShowOnScreenControllerChanged(_ sender: Any) {
+        UserDefaults.standard.showOnScreenController = onScreenControllerSwitch.isOn
+        onScreenControllerUpdater?.updateOnScreenController()
     }
 
     /// Handle click outside of any element
