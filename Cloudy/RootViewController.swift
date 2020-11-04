@@ -77,11 +77,46 @@ class RootViewController: UIViewController {
         addChild(menuViewController)
         view.addSubview(menuViewController.view)
         menuViewController.didMove(toParent: self)
+
+        /// Onscreen controls container
+        let onscreenContainer = UIView(frame: view.bounds)
+        view.addSubview(onscreenContainer)
+        onscreenContainer.fillParent()
+        // stream config
+        let streamConfig      = StreamConfiguration()
+        // Controller support
+        let controllerSupport = ControllerSupport(config: streamConfig, presenceDelegate: self)
+        // stream view
+        let streamView        = StreamView(frame: onscreenContainer.bounds)
+        streamView.setupStreamView(controllerSupport, interactionDelegate: self, config: streamConfig)
+        streamView.showOnScreenControls()
+        onscreenContainer.addSubview(streamView)
+        streamView.fillParent()
     }
 
     /// Tapped on the menu item
     @IBAction func onMenuButtonPressed(_ sender: Any) {
         menu?.show()
+    }
+}
+
+extension RootViewController: UserInteractionDelegate {
+    open func userInteractionBegan() {
+        print("userInteractionBegan")
+    }
+
+    open func userInteractionEnded() {
+        print("userInteractionEnded")
+    }
+}
+
+extension RootViewController: InputPresenceDelegate {
+    open func gamepadPresenceChanged() {
+        print("gamepadPresenceChanged")
+    }
+
+    open func mousePresenceChanged() {
+        print("gamepadPresenceChanged")
     }
 }
 

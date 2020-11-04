@@ -3,7 +3,6 @@
 import Foundation
 import WebKit
 import GameController
-import CloudyLibrary
 
 /// Main module that connects the web views controller scripts to the native controller handling
 class WebViewControllerBridge: NSObject, WKScriptMessageHandlerWithReply {

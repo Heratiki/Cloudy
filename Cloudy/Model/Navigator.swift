@@ -2,7 +2,6 @@
 
 import Foundation
 import GameController
-import CloudyLibrary
 
 /// Model class to map navigation based on url
 class Navigator {
