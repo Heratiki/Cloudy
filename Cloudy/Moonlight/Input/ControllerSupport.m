@@ -8,7 +8,7 @@
 
 #import "ControllerSupport.h"
 #import "Controller.h"
-#import "Logger.h"
+#import "Log.h"
 #import "OnScreenControls.h"
 #import "Cloudy-Swift.h"
 
@@ -322,7 +322,7 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
             {
                 controller.extendedGamepad.valueChangedHandler = ^(GCExtendedGamepad *gamepad, GCControllerElement *element)
                 {
-                    Controller *limeController = [self->_controllers objectForKey:[NSNumber numberWithInteger:gamepad.controller.playerIndex]];
+                    Controller    *limeController = [self->_controllers objectForKey:[NSNumber numberWithInteger:gamepad.controller.playerIndex]];
                     short         leftStickX, leftStickY;
                     short         rightStickX, rightStickY;
                     unsigned char leftTrigger, rightTrigger;
@@ -414,7 +414,7 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
         }
         else
         {
-            Log(LOG_W, @"Tried to register controller callbacks on NULL controller");
+            LogE(@"Tried to register controller callbacks on NULL controller");
         }
     }
 
@@ -617,7 +617,7 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
 
                 [_controllers setObject:limeController forKey:[NSNumber numberWithInteger:controller.playerIndex]];
 
-                Log(LOG_I, @"Assigning controller index: %d", i);
+                LogI(@"Assigning controller index: %d", i);
                 break;
             }
         }
@@ -656,7 +656,7 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
 
         if(streamConfig.multiController)
         {
-            int i = 0;
+            int              i = 0;
             for(GCController *controller in [GCController controllers])
             {
                 if([ControllerSupport isSupportedGamepad:controller])
@@ -672,8 +672,8 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
             mask = 0x1;
         }
 
-        TemporarySettings *settings = [[TemporarySettings alloc] init];
-        OnScreenControlsLevel level = settings.onscreenControls;
+        TemporarySettings     *settings = [[TemporarySettings alloc] init];
+        OnScreenControlsLevel level     = settings.onscreenControls;
 
         // Even if no gamepads are present, we will always count one if OSC is enabled,
         // or it's set to auto and no keyboard or mouse is present.
@@ -706,8 +706,8 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
         TemporarySettings *settings = [[TemporarySettings alloc] init];
         _oscEnabled = settings.onscreenControls != OnScreenControlsLevelOff;
 
-        Log(LOG_I, @"Number of supported controllers connected: %d", [ControllerSupport getGamepadCount]);
-        Log(LOG_I, @"Multi-controller: %d", _multiController);
+        LogI(@"Number of supported controllers connected: %d", [ControllerSupport getGamepadCount]);
+        LogI(@"Multi-controller: %d", _multiController);
 
         for(GCController *controller in [GCController controllers])
         {
@@ -728,7 +728,7 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
 
         _controllerConnectObserver    = [[NSNotificationCenter defaultCenter] addObserverForName:GCControllerDidConnectNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note)
         {
-            Log(LOG_I, @"Controller connected!");
+            LogI(@"Controller connected!");
 
             GCController *controller = note.object;
 
@@ -751,7 +751,7 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
         }];
         _controllerDisconnectObserver = [[NSNotificationCenter defaultCenter] addObserverForName:GCControllerDidDisconnectNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note)
         {
-            Log(LOG_I, @"Controller disconnected!");
+            LogI(@"Controller disconnected!");
 
             GCController *controller = note.object;
 
@@ -763,7 +763,7 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
 
             [self unregisterControllerCallbacks:controller];
             self->_controllerNumbers &= ~(1 << controller.playerIndex);
-            Log(LOG_I, @"Unassigning controller index: %ld", (long) controller.playerIndex);
+            LogI(@"Unassigning controller index: %ld", (long) controller.playerIndex);
 
             // Unset the GCController on this object (in case it is the OSC, which will persist)
             Controller *limeController = [self->_controllers objectForKey:[NSNumber numberWithInteger:controller.playerIndex]];
@@ -788,7 +788,7 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
         {
             _mouseConnectObserver       = [[NSNotificationCenter defaultCenter] addObserverForName:GCMouseDidConnectNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note)
             {
-                Log(LOG_I, @"Mouse connected!");
+                LogI(@"Mouse connected!");
 
                 GCMouse *mouse = note.object;
 
@@ -803,7 +803,7 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
             }];
             _mouseDisconnectObserver    = [[NSNotificationCenter defaultCenter] addObserverForName:GCMouseDidDisconnectNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note)
             {
-                Log(LOG_I, @"Mouse disconnected!");
+                LogI(@"Mouse disconnected!");
 
                 GCMouse *mouse = note.object;
 
@@ -818,14 +818,14 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
             }];
             _keyboardConnectObserver    = [[NSNotificationCenter defaultCenter] addObserverForName:GCKeyboardDidConnectNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note)
             {
-                Log(LOG_I, @"Keyboard connected!");
+                LogI(@"Keyboard connected!");
 
                 // Re-evaluate the on-screen control mode
                 [self updateAutoOnScreenControlMode];
             }];
             _keyboardDisconnectObserver = [[NSNotificationCenter defaultCenter] addObserverForName:GCKeyboardDidDisconnectNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note)
             {
-                Log(LOG_I, @"Keyboard disconnected!");
+                LogI(@"Keyboard disconnected!");
 
                 // Re-evaluate the on-screen control mode
                 [self updateAutoOnScreenControlMode];

@@ -7,7 +7,7 @@
 //
 
 #import "RelativeTouchHandler.h"
-#import "Logger.h"
+#import "Log.h"
 
 #include "Limelight.h"
 
@@ -142,7 +142,7 @@ static const int REFERENCE_HEIGHT = 720;
             {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^
                 {
-                    Log(LOG_D, @"Sending right mouse button press");
+                    LogI(@"Sending right mouse button press");
 
                     LiSendMouseButtonEvent(BUTTON_ACTION_PRESS, BUTTON_RIGHT);
 
@@ -158,7 +158,7 @@ static const int REFERENCE_HEIGHT = 720;
                 {
                     if(!self->isDragging)
                     {
-                        Log(LOG_D, @"Sending left mouse button press");
+                        LogI(@"Sending left mouse button press");
 
                         LiSendMouseButtonEvent(BUTTON_ACTION_PRESS, BUTTON_LEFT);
 

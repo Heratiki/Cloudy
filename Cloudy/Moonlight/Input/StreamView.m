@@ -12,7 +12,7 @@
 #import "KeyboardSupport.h"
 #import "RelativeTouchHandler.h"
 #import "AbsoluteTouchHandler.h"
-#import "Logger.h"
+#import "Log.h"
 #import "Cloudy-Swift.h"
 
 static const double X1_MOUSE_SPEED_DIVISOR = 2.5;
@@ -22,7 +22,7 @@ static const double X1_MOUSE_SPEED_DIVISOR = 2.5;
         OnScreenControls *onScreenControls;
 
         UITextField *keyInputField;
-        BOOL isInputingText;
+        BOOL        isInputingText;
 
         float streamAspectRatio;
 
@@ -33,14 +33,14 @@ static const double X1_MOUSE_SPEED_DIVISOR = 2.5;
 
         // Citrix X1 mouse support
         X1Mouse *x1mouse;
-        double accumulatedMouseDeltaX;
-        double accumulatedMouseDeltaY;
+        double  accumulatedMouseDeltaX;
+        double  accumulatedMouseDeltaY;
 
         UIResponder *touchHandler;
 
         id <UserInteractionDelegate> interactionDelegate;
-        NSTimer *interactionTimer;
-        BOOL hasUserInteracted;
+        NSTimer                      *interactionTimer;
+        BOOL                         hasUserInteracted;
 
         NSDictionary<NSString *, NSNumber *> *dictCodes;
     }
@@ -79,7 +79,7 @@ static const double X1_MOUSE_SPEED_DIVISOR = 2.5;
         OnScreenControlsLevel level = settings.onscreenControls;
         if(settings.absoluteTouchMode)
         {
-            Log(LOG_I, @"On-screen controls disabled in absolute touch mode");
+            LogI(@"On-screen controls disabled in absolute touch mode");
             [onScreenControls setLevel:OnScreenControlsLevelOff];
         }
         else if(level == OnScreenControlsLevelAuto)
@@ -88,7 +88,7 @@ static const double X1_MOUSE_SPEED_DIVISOR = 2.5;
         }
         else
         {
-            Log(LOG_I, @"Setting manual on-screen controls level: %d", (int) level);
+            LogI(@"Setting manual on-screen controls level: %d", (int) level);
             [onScreenControls setLevel:level];
         }
 
@@ -183,7 +183,7 @@ static const double X1_MOUSE_SPEED_DIVISOR = 2.5;
             return;
         }
 
-        Log(LOG_D, @"Touch down");
+        LogD(@"Touch down");
 
         // Notify of user interaction and start expiration timer
         [self startInteractionTimer];
@@ -194,13 +194,13 @@ static const double X1_MOUSE_SPEED_DIVISOR = 2.5;
             {
                 if(isInputingText)
                 {
-                    Log(LOG_D, @"Closing the keyboard");
+                    LogD(@"Closing the keyboard");
                     [keyInputField resignFirstResponder];
                     isInputingText = false;
                 }
                 else
                 {
-                    Log(LOG_D, @"Opening the keyboard");
+                    LogD(@"Opening the keyboard");
                     // Prepare the textbox used to capture keyboard events.
                     keyInputField.delegate = self;
                     keyInputField.text     = @"0";
@@ -388,7 +388,7 @@ static const double X1_MOUSE_SPEED_DIVISOR = 2.5;
             return;
         }
 
-        Log(LOG_D, @"Touch up");
+        LogD(@"Touch up");
 
         hasUserInteracted = YES;
 
@@ -585,7 +585,7 @@ static const double X1_MOUSE_SPEED_DIVISOR = 2.5;
                     if(event.keycode == 0)
                     {
                         // If we don't know the code, don't send anything.
-                        Log(LOG_W, @"Unknown key code: [%c]", [inputText characterAtIndex:i]);
+                        LogE(@"Unknown key code: [%c]", [inputText characterAtIndex:i]);
                         continue;
                     }
                     [self sendLowLevelEvent:event];

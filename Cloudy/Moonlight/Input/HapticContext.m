@@ -7,15 +7,15 @@
 //
 
 #import "HapticContext.h"
-#import "Logger.h"
+#import "Log.h"
 
 @import CoreHaptics;
 @import GameController;
 
 @implementation HapticContext
     {
-        GCControllerPlayerIndex _playerIndex;
-        CHHapticEngine *_hapticEngine API_AVAILABLE(ios(13.0), tvos(14.0));
+        GCControllerPlayerIndex    _playerIndex;
+        CHHapticEngine             *_hapticEngine API_AVAILABLE(ios(13.0), tvos(14.0));
         id <CHHapticPatternPlayer> _hapticPlayer API_AVAILABLE(ios(13.0), tvos(14.0));
         BOOL                       _playing;
     }
@@ -64,14 +64,14 @@
             CHHapticPattern        *hapticPattern      = [[CHHapticPattern alloc] initWithEvents:[NSArray arrayWithObject:hapticEvent] parameters:[[NSArray alloc] init] error:&error];
             if(error != nil)
             {
-                Log(LOG_W, @"Controller %d: Haptic pattern creation failed: %@", _playerIndex, error);
+                LogE(@"Controller %d: Haptic pattern creation failed: %@", _playerIndex, error);
                 return;
             }
 
             _hapticPlayer = [_hapticEngine createPlayerWithPattern:hapticPattern error:&error];
             if(error != nil)
             {
-                Log(LOG_W, @"Controller %d: Haptic player creation failed: %@", _playerIndex, error);
+                LogE(@"Controller %d: Haptic player creation failed: %@", _playerIndex, error);
                 return;
             }
         }
@@ -80,7 +80,7 @@
         [_hapticPlayer sendParameters:[NSArray arrayWithObject:intensityParameter] atTime:CHHapticTimeImmediate error:&error];
         if(error != nil)
         {
-            Log(LOG_W, @"Controller %d: Haptic player parameter update failed: %@", _playerIndex, error);
+            LogE(@"Controller %d: Haptic player parameter update failed: %@", _playerIndex, error);
             return;
         }
 
@@ -90,7 +90,7 @@
             if(error != nil)
             {
                 _hapticPlayer = nil;
-                Log(LOG_W, @"Controller %d: Haptic playback start failed: %@", _playerIndex, error);
+                LogE(@"Controller %d: Haptic playback start failed: %@", _playerIndex, error);
                 return;
             }
 
@@ -102,7 +102,7 @@
     {
         if(gamepad.haptics == nil)
         {
-            Log(LOG_W, @"Controller %d does not support haptics", gamepad.playerIndex);
+            LogE(@"Controller %d does not support haptics", gamepad.playerIndex);
             return nil;
         }
 
@@ -113,7 +113,7 @@
         [_hapticEngine startAndReturnError:&error];
         if(error != nil)
         {
-            Log(LOG_W, @"Controller %d: Haptic engine failed to start: %@", gamepad.playerIndex, error);
+            LogE(@"Controller %d: Haptic engine failed to start: %@", gamepad.playerIndex, error);
             return nil;
         }
 
@@ -126,7 +126,7 @@
                 return;
             }
 
-            Log(LOG_W, @"Controller %d: Haptic engine stopped: %p", me->_playerIndex, stoppedReason);
+            LogE(@"Controller %d: Haptic engine stopped: %p", me->_playerIndex, stoppedReason);
             me->_hapticPlayer = nil;
             me->_hapticEngine = nil;
             me->_playing      = NO;
@@ -139,7 +139,7 @@
                 return;
             }
 
-            Log(LOG_W, @"Controller %d: Haptic engine reset", me->_playerIndex);
+            LogE(@"Controller %d: Haptic engine reset", me->_playerIndex);
             me->_hapticPlayer = nil;
             me->_playing      = NO;
             [me->_hapticEngine startAndReturnError:nil];

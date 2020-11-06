@@ -4,13 +4,13 @@
 
 #include <Foundation/Foundation.h>
 #include "Limelight.h"
-#include "Logger.h"
+#include "Log.h"
 #include "Cloudy-Swift.h"
 
 // This function queues a relative mouse move event to be sent to the remote server.
 int LiSendMouseMoveEvent(short deltaX, short deltaY)
 {
-    Log(LOG_I, @"LiSendMouseMoveEvent");
+    LogI(@"LiSendMouseMoveEvent");
     return 0;
 }
 
@@ -30,19 +30,19 @@ int LiSendMouseMoveEvent(short deltaX, short deltaY)
 // referenceWidth and referenceHeight to your window width and height.
 int LiSendMousePositionEvent(short x, short y, short referenceWidth, short referenceHeight)
 {
-    Log(LOG_I, @"LiSendMousePositionEvent");
+    LogI(@"LiSendMousePositionEvent");
     return 0;
 }
 
 int LiSendMouseButtonEvent(char action, int button)
 {
-    Log(LOG_I, @"LiSendMouseButtonEvent");
+    LogI(@"LiSendMouseButtonEvent");
     return 0;
 }
 
 int LiSendKeyboardEvent(short keyCode, char keyAction, char modifiers)
 {
-    Log(LOG_I, @"LiSendKeyboardEvent");
+    LogI(@"LiSendKeyboardEvent");
     return 0;
 }
 
@@ -51,7 +51,7 @@ int LiSendKeyboardEvent(short keyCode, char keyAction, char modifiers)
 int LiSendControllerEvent(short buttonFlags, unsigned char leftTrigger, unsigned char rightTrigger,
                           short leftStickX, short leftStickY, short rightStickX, short rightStickY)
 {
-    Log(LOG_I, @"LiSendControllerEvent");
+    LogI(@"LiSendControllerEvent");
     return 0;
 }
 
@@ -64,9 +64,9 @@ int LiSendMultiControllerEvent(short controllerNumber, short activeGamepadMask,
                                short buttonFlags, unsigned char leftTrigger, unsigned char rightTrigger,
                                short leftStickX, short leftStickY, short rightStickX, short rightStickY)
 {
-    Log(LOG_I, [NSString stringWithFormat:@"LiSendMultiControllerEvent: %i, %i, %i, %i, %i, %i, %i, %i, %i",
-                                          controllerNumber, activeGamepadMask, buttonFlags, leftTrigger, rightTrigger,
-                                          leftStickX, leftStickY, rightStickX, rightStickY]);
+    LogI([NSString stringWithFormat:@"LiSendMultiControllerEvent: %i, %i, %i, %i, %i, %i, %i, %i, %i",
+                                    controllerNumber, activeGamepadMask, buttonFlags, leftTrigger, rightTrigger,
+                                    leftStickX, leftStickY, rightStickX, rightStickY]);
     [WebViewControllerBridge submitWithControllerNumber:controllerNumber
                              activeGamepadMask:activeGamepadMask
                              buttonFlags:buttonFlags
@@ -84,7 +84,7 @@ int LiSendMultiControllerEvent(short controllerNumber, short activeGamepadMask,
 // being sent to the PC.
 int LiSendScrollEvent(signed char scrollClicks)
 {
-    Log(LOG_I, @"LiSendScrollEvent");
+    LogI(@"LiSendScrollEvent");
     return 0;
 }
 
@@ -94,6 +94,6 @@ int LiSendScrollEvent(signed char scrollClicks)
 // scrolling (Apple Trackpads, Microsoft Precision Touchpads, etc.).
 int LiSendHighResScrollEvent(short scrollAmount)
 {
-    Log(LOG_I, @"LiSendHighResScrollEvent");
+    LogI(@"LiSendHighResScrollEvent");
     return 0;
 }

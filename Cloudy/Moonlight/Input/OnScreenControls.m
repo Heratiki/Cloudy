@@ -11,7 +11,7 @@
 #import "ControllerSupport.h"
 #import "Controller.h"
 #include "Limelight.h"
-#import "Logger.h"
+#import "Log.h"
 
 #define UPDATE_BUTTON(x, y) (buttonFlags = \
 (y) ? (buttonFlags | (x)) : (buttonFlags & ~(x)))
@@ -251,7 +251,7 @@
                 [self hideL3R3]; // Full controls don't need these they have the sticks
                 break;
             default:
-                Log(LOG_W, @"Unknown on-screen controls level: %d", (int) _level);
+                LogE(@"Unknown on-screen controls level: %d", (int) _level);
                 break;
         }
     }

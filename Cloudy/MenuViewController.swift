@@ -26,6 +26,7 @@ protocol OverlayController {
 class MenuViewController: UIViewController {
 
     /// View references
+    @IBOutlet var shadowViews: [UIView]!
     @IBOutlet weak var userAgentTextField:       UITextField!
     @IBOutlet weak var manualUserAgent:          UISwitch!
     @IBOutlet weak var addressBar:               UITextField!
@@ -74,7 +75,8 @@ class MenuViewController: UIViewController {
         userAgentTextField.text = UserDefaults.standard.manualUserAgent
         manualUserAgent.isOn = UserDefaults.standard.useManualUserAgent
         allowInlineFeedback.isOn = UserDefaults.standard.allowInlineMedia
-        onScreenControllerSwitch.isOn = UserDefaults.standard.showOnScreenController
+        // apply shadows
+        shadowViews.forEach { $0.addShadow() }
     }
 }
 

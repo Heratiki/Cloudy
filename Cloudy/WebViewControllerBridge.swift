@@ -39,7 +39,10 @@ import GameController
         if let virtualController = WebViewControllerBridge.virtualController {
             replyHandler(virtualController.jsonString, nil)
             return
+        } else {
+            replyHandler(nil, nil)
         }
+        return
 
         //////////////////// PHYSICAL CONTROLLER
         // early exit
