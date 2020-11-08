@@ -39,6 +39,7 @@ class WebViewControllerBridge: NSObject, WKScriptMessageHandlerWithReply, Contro
         // only execute if the correct message was received
         guard message.name == WKWebView.messageHandlerName else {
             Log.e("Unknown message received: \(message)")
+            replyHandler(nil, nil)
             return
         }
         // return value depending on configuration
