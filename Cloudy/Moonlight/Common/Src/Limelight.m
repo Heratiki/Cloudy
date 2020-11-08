@@ -10,7 +10,7 @@
 // This function queues a relative mouse move event to be sent to the remote server.
 int LiSendMouseMoveEvent(short deltaX, short deltaY)
 {
-    LogI(@"LiSendMouseMoveEvent");
+    LogD(@"LiSendMouseMoveEvent");
     return 0;
 }
 
@@ -30,19 +30,19 @@ int LiSendMouseMoveEvent(short deltaX, short deltaY)
 // referenceWidth and referenceHeight to your window width and height.
 int LiSendMousePositionEvent(short x, short y, short referenceWidth, short referenceHeight)
 {
-    LogI(@"LiSendMousePositionEvent");
+    LogD(@"LiSendMousePositionEvent");
     return 0;
 }
 
 int LiSendMouseButtonEvent(char action, int button)
 {
-    LogI(@"LiSendMouseButtonEvent");
+    LogD(@"LiSendMouseButtonEvent");
     return 0;
 }
 
 int LiSendKeyboardEvent(short keyCode, char keyAction, char modifiers)
 {
-    LogI(@"LiSendKeyboardEvent");
+    LogD(@"LiSendKeyboardEvent");
     return 0;
 }
 
@@ -64,7 +64,7 @@ int LiSendMultiControllerEvent(short controllerNumber, short activeGamepadMask,
                                short buttonFlags, unsigned char leftTrigger, unsigned char rightTrigger,
                                short leftStickX, short leftStickY, short rightStickX, short rightStickY)
 {
-    LogI([NSString stringWithFormat:@"LiSendMultiControllerEvent: %i, %i, %i, %i, %i, %i, %i, %i, %i",
+    LogD([NSString stringWithFormat:@"LiSendMultiControllerEvent: %i, %i, %i, %i, %i, %i, %i, %i, %i",
                                     controllerNumber, activeGamepadMask, buttonFlags, leftTrigger, rightTrigger,
                                     leftStickX, leftStickY, rightStickX, rightStickY]);
     [WebViewControllerBridge submitWithControllerNumber:controllerNumber
@@ -84,7 +84,7 @@ int LiSendMultiControllerEvent(short controllerNumber, short activeGamepadMask,
 // being sent to the PC.
 int LiSendScrollEvent(signed char scrollClicks)
 {
-    LogI(@"LiSendScrollEvent");
+    LogD(@"LiSendScrollEvent");
     return 0;
 }
 
@@ -94,6 +94,6 @@ int LiSendScrollEvent(signed char scrollClicks)
 // scrolling (Apple Trackpads, Microsoft Precision Touchpads, etc.).
 int LiSendHighResScrollEvent(short scrollAmount)
 {
-    LogI(@"LiSendHighResScrollEvent");
+    LogD(@"LiSendHighResScrollEvent");
     return 0;
 }
