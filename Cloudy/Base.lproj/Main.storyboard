@@ -194,7 +194,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4m-dB-ad9" userLabel="Shortcuts">
                                         <rect key="frame" x="10" y="80" width="1060" height="202.5"/>
                                         <subviews>
-                                            <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsb-dV-3kR" userLabel="Background">
+                                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsb-dV-3kR" userLabel="Background">
                                                 <rect key="frame" x="0.0" y="0.0" width="1060" height="202.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -227,6 +227,7 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -247,10 +248,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-HA-LhZ" userLabel="Other">
-                                        <rect key="frame" x="10" y="292.5" width="1060" height="517.5"/>
+                                        <rect key="frame" x="10" y="292.5" width="1060" height="507.5"/>
                                         <subviews>
-                                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xe3-kE-k0b" userLabel="Background">
-                                                <rect key="frame" x="0.0" y="0.0" width="1060" height="517.5"/>
+                                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xe3-kE-k0b" userLabel="Background">
+                                                <rect key="frame" x="0.0" y="0.0" width="1060" height="507.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -259,10 +260,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqU-3W-fmz">
-                                                <rect key="frame" x="0.0" y="0.0" width="1060" height="517.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1060" height="507.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgo-yy-K9r">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1060" height="517.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="1060" height="507.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E19-IG-xpE">
                                                                 <rect key="frame" x="10" y="10" width="1040" height="224"/>
@@ -434,6 +435,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="7HL-oZ-bIE" firstAttribute="centerX" secondItem="OQM-5b-cVm" secondAttribute="centerX" id="dWy-sf-S0O"/>
                                                                 </constraints>
@@ -475,7 +477,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="fbJ-HA-LhZ" secondAttribute="bottom" id="1PT-LO-IX1"/>
+                                    <constraint firstAttribute="bottom" secondItem="fbJ-HA-LhZ" secondAttribute="bottom" constant="10" id="1PT-LO-IX1"/>
                                     <constraint firstItem="fbJ-HA-LhZ" firstAttribute="top" secondItem="h4m-dB-ad9" secondAttribute="bottom" constant="10" id="4md-Pz-gBx"/>
                                     <constraint firstAttribute="trailing" secondItem="msx-gl-qX8" secondAttribute="trailing" constant="10" id="AdU-RF-qao"/>
                                     <constraint firstAttribute="trailing" secondItem="fbJ-HA-LhZ" secondAttribute="trailing" constant="10" id="C4M-Xm-Qr0"/>
