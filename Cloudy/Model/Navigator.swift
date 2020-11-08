@@ -2,7 +2,6 @@
 
 import Foundation
 import GameController
-import CloudyLibrary
 
 /// Model class to map navigation based on url
 class Navigator {
@@ -27,12 +26,13 @@ class Navigator {
             static let geforceNow     = URL(string: "https://play.geforcenow.com")!
             static let boosteroid     = URL(string: "https://cloud.boosteroid.com")!
             static let nvidiaRoot     = URL(string: "https://www.nvidia.com")!
-            static let patreon        = URL(string: "https://www.patreon.com/mlostek")!
+            static let patreon        = URL(string: "https://www.patreon.com/cloudyApp")!
             static let paypal         = URL(string: "https://paypal.me/pools/c/8tPw2veZIm")!
         }
 
         struct UserAgent {
-            static let chromeDesktop = "Mozilla/5.0 (X11; CrOS x86_64 13421.73.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.112 Safari/537.36"
+            static let chromeDesktop = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
+            static let iPhone        = "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15"
         }
     }
 
@@ -40,7 +40,7 @@ class Navigator {
     struct Navigation {
         let userAgent:    String?
         let forwardToUrl: URL?
-        let bridgeType:   GCExtendedGamepad.JsonType
+        let bridgeType:   CloudyController.JsonType
     }
 
     /// The manual fixed user agent override

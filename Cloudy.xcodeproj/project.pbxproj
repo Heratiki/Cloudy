@@ -3,24 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44A4D01B0487765908ADFCC8 /* CloudyGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D70BD73D663A3E27A322 /* CloudyGameController.swift */; };
 		44A4D07E127721BBFE3C3EA5 /* WebViewControllerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D67F8889E455A547CB96 /* WebViewControllerBridge.swift */; };
 		44A4D0FBB22CC22B053573C3 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D8A659024EF865AEB5D4 /* UIView.swift */; };
+		44A4D12458F1925C8B716EAD /* Limelight.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D42B4BF97B06DF2A6BEA /* Limelight.m */; };
 		44A4D13A82DE5B9006FED3DC /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D58266EE8EF012AEA979 /* Navigator.swift */; };
+		44A4D240730D282493AC380E /* StreamConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D47E3D9518C80384D8F4 /* StreamConfiguration.m */; };
+		44A4D3B8AE0372A4C71E32EC /* TemporarySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4DF345C0AE58872E1CC3A /* TemporarySettings.swift */; };
 		44A4D4CD5F66196CB7AD5CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D965A769BDED09733089 /* AppDelegate.swift */; };
+		44A4D56785DE2ACC82B37F52 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D1A39583BB7F49ABD541 /* Log.swift */; };
 		44A4D7DCB15B8C4799D56BCA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D0057BF82C52A8F76A38 /* String.swift */; };
 		44A4D8885DB5BE5C73C9FB87 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D3A1BA3A8B2AB96CB81B /* UserDefaults.swift */; };
 		44A4D8940EA58BA835224F08 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D28CC8536DDE9F1F0250 /* WKWebView.swift */; };
+		44A4DB4BEAB929481B3024E4 /* CloudyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D27EF5AD15611DBEC689 /* CloudyController.swift */; };
 		44A4DB830BC41F131E122F7C /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D999AA39891699C55D00 /* GameController.swift */; };
 		44A4DC86DF1DDD05E6FC802A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D58736385FBD2B75856B /* MenuViewController.swift */; };
-		44A4DD02B25D92ECC2A0C48F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D425AA9492A7F66964BC /* Config.swift */; };
+		44A4DCA503A87B314B8CB75A /* ButtonOptionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D9F318B9593A6DD6F951 /* ButtonOptionSet.swift */; };
+		44A4DD2289A8D028B03463E0 /* X1Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D996514DEB85071D2DA7 /* X1Kit.swift */; };
 		44A4DD2F10965A88D83F5C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4DBCCBA86600B436045E4 /* SceneDelegate.swift */; };
 		5CDDBA53FB1B62159C8668EF /* Pods_Cloudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF8562B1619F13A7254171F /* Pods_Cloudy.framework */; };
-		E740FE88254B641200533472 /* CloudyLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E740FE87254B641200533472 /* CloudyLibrary.xcframework */; };
-		E740FE89254B641200533472 /* CloudyLibrary.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E740FE87254B641200533472 /* CloudyLibrary.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E712FF9825520978003CF78C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E712FF9725520978003CF78C /* Images.xcassets */; };
+		E723D48225532E08007413D9 /* StreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = E723D47625532E08007413D9 /* StreamView.m */; };
+		E723D48325532E08007413D9 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = E723D47725532E08007413D9 /* Controller.m */; };
+		E723D48425532E08007413D9 /* RelativeTouchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E723D47825532E08007413D9 /* RelativeTouchHandler.m */; };
+		E723D48525532E08007413D9 /* ControllerSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E723D47925532E08007413D9 /* ControllerSupport.m */; };
+		E723D48625532E08007413D9 /* AbsoluteTouchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E723D47C25532E08007413D9 /* AbsoluteTouchHandler.m */; };
+		E723D48725532E08007413D9 /* OnScreenControls.m in Sources */ = {isa = PBXBuildFile; fileRef = E723D47F25532E08007413D9 /* OnScreenControls.m */; };
+		E723D48825532E08007413D9 /* KeyboardSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E723D48025532E08007413D9 /* KeyboardSupport.m */; };
+		E723D48925532E08007413D9 /* HapticContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E723D48125532E08007413D9 /* HapticContext.m */; };
 		E776E038254AE08E00684328 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E776E037254AE08E00684328 /* GoogleService-Info.plist */; };
 		E7B87E2B25338121004358E3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B87E2A25338121004358E3 /* RootViewController.swift */; };
 		E7B87E2E25338121004358E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B87E2C25338121004358E3 /* Main.storyboard */; };
@@ -28,35 +42,50 @@
 		E7B87E3325338124004358E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B87E3125338124004358E3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		E7E6201C2549661900DD1BD0 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E740FE89254B641200533472 /* CloudyLibrary.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		1BF8562B1619F13A7254171F /* Pods_Cloudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cloudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A4D0057BF82C52A8F76A38 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		44A4D1A39583BB7F49ABD541 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		44A4D27EF5AD15611DBEC689 /* CloudyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudyController.swift; sourceTree = "<group>"; };
 		44A4D28CC8536DDE9F1F0250 /* WKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
 		44A4D3A1BA3A8B2AB96CB81B /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		44A4D425AA9492A7F66964BC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		44A4D42B4BF97B06DF2A6BEA /* Limelight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Limelight.m; sourceTree = "<group>"; };
+		44A4D47E3D9518C80384D8F4 /* StreamConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamConfiguration.m; sourceTree = "<group>"; };
 		44A4D58266EE8EF012AEA979 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		44A4D58736385FBD2B75856B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		44A4D67F8889E455A547CB96 /* WebViewControllerBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewControllerBridge.swift; sourceTree = "<group>"; };
+		44A4D70BD73D663A3E27A322 /* CloudyGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudyGameController.swift; sourceTree = "<group>"; };
+		44A4D7B73DC83248F99BFA6F /* Limelight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Limelight.h; sourceTree = "<group>"; };
+		44A4D7CF8072725D6F7680F7 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
 		44A4D8A659024EF865AEB5D4 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		44A4D965A769BDED09733089 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		44A4D996514DEB85071D2DA7 /* X1Kit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = X1Kit.swift; sourceTree = "<group>"; };
 		44A4D999AA39891699C55D00 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		44A4D9F318B9593A6DD6F951 /* ButtonOptionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonOptionSet.swift; sourceTree = "<group>"; };
 		44A4DBCCBA86600B436045E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		44A4DEAFE04C43372A474AF7 /* StreamConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamConfiguration.h; sourceTree = "<group>"; };
+		44A4DF345C0AE58872E1CC3A /* TemporarySettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporarySettings.swift; sourceTree = "<group>"; };
+		44A4DF4DEEC15EF8DE2B1C18 /* Cloudy-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cloudy-Bridging-Header.h"; sourceTree = "<group>"; };
 		79B35440DA7901C4949EFDC7 /* Pods-Cloudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cloudy.release.xcconfig"; path = "Target Support Files/Pods-Cloudy/Pods-Cloudy.release.xcconfig"; sourceTree = "<group>"; };
 		B42B0FEC073AD10E0FCA6CF1 /* Pods-Cloudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cloudy.debug.xcconfig"; path = "Target Support Files/Pods-Cloudy/Pods-Cloudy.debug.xcconfig"; sourceTree = "<group>"; };
+		E712FF9725520978003CF78C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E723D44425532973007413D9 /* CloudyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CloudyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E723D47225532E08007413D9 /* RelativeTouchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RelativeTouchHandler.h; path = Cloudy/Moonlight/Input/RelativeTouchHandler.h; sourceTree = SOURCE_ROOT; };
+		E723D47325532E08007413D9 /* ControllerSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControllerSupport.h; path = Cloudy/Moonlight/Input/ControllerSupport.h; sourceTree = SOURCE_ROOT; };
+		E723D47425532E08007413D9 /* StreamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StreamView.h; path = Cloudy/Moonlight/Input/StreamView.h; sourceTree = SOURCE_ROOT; };
+		E723D47525532E08007413D9 /* AbsoluteTouchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbsoluteTouchHandler.h; path = Cloudy/Moonlight/Input/AbsoluteTouchHandler.h; sourceTree = SOURCE_ROOT; };
+		E723D47625532E08007413D9 /* StreamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StreamView.m; path = Cloudy/Moonlight/Input/StreamView.m; sourceTree = SOURCE_ROOT; };
+		E723D47725532E08007413D9 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Controller.m; path = Cloudy/Moonlight/Input/Controller.m; sourceTree = SOURCE_ROOT; };
+		E723D47825532E08007413D9 /* RelativeTouchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RelativeTouchHandler.m; path = Cloudy/Moonlight/Input/RelativeTouchHandler.m; sourceTree = SOURCE_ROOT; };
+		E723D47925532E08007413D9 /* ControllerSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControllerSupport.m; path = Cloudy/Moonlight/Input/ControllerSupport.m; sourceTree = SOURCE_ROOT; };
+		E723D47A25532E08007413D9 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Controller.h; path = Cloudy/Moonlight/Input/Controller.h; sourceTree = SOURCE_ROOT; };
+		E723D47B25532E08007413D9 /* OnScreenControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnScreenControls.h; path = Cloudy/Moonlight/Input/OnScreenControls.h; sourceTree = SOURCE_ROOT; };
+		E723D47C25532E08007413D9 /* AbsoluteTouchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbsoluteTouchHandler.m; path = Cloudy/Moonlight/Input/AbsoluteTouchHandler.m; sourceTree = SOURCE_ROOT; };
+		E723D47D25532E08007413D9 /* HapticContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HapticContext.h; path = Cloudy/Moonlight/Input/HapticContext.h; sourceTree = SOURCE_ROOT; };
+		E723D47E25532E08007413D9 /* KeyboardSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyboardSupport.h; path = Cloudy/Moonlight/Input/KeyboardSupport.h; sourceTree = SOURCE_ROOT; };
+		E723D47F25532E08007413D9 /* OnScreenControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OnScreenControls.m; path = Cloudy/Moonlight/Input/OnScreenControls.m; sourceTree = SOURCE_ROOT; };
+		E723D48025532E08007413D9 /* KeyboardSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyboardSupport.m; path = Cloudy/Moonlight/Input/KeyboardSupport.m; sourceTree = SOURCE_ROOT; };
+		E723D48125532E08007413D9 /* HapticContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HapticContext.m; path = Cloudy/Moonlight/Input/HapticContext.m; sourceTree = SOURCE_ROOT; };
 		E740FE87254B641200533472 /* CloudyLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CloudyLibrary.xcframework; path = Frameworks/Cloudy/CloudyLibrary.xcframework; sourceTree = "<group>"; };
 		E776E037254AE08E00684328 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7B87E2325338121004358E3 /* Cloudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cloudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +102,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CDDBA53FB1B62159C8668EF /* Pods_Cloudy.framework in Frameworks */,
-				E740FE88254B641200533472 /* CloudyLibrary.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +117,32 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		44A4D204255B64D65EF3ED9F /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D7B73DC83248F99BFA6F /* Limelight.h */,
+				44A4D42B4BF97B06DF2A6BEA /* Limelight.m */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		44A4D29FB7293D197F2EF011 /* X1Kit */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D996514DEB85071D2DA7 /* X1Kit.swift */,
+			);
+			path = X1Kit;
+			sourceTree = "<group>";
+		};
+		44A4D312712DC4A60D8F3068 /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D47E3D9518C80384D8F4 /* StreamConfiguration.m */,
+				44A4DEAFE04C43372A474AF7 /* StreamConfiguration.h */,
+			);
+			path = Stream;
+			sourceTree = "<group>";
+		};
 		44A4D35F4287C173F7E152C8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,13 +154,84 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		44A4D437C146B24C01CA81BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E723D47525532E08007413D9 /* AbsoluteTouchHandler.h */,
+				E723D47C25532E08007413D9 /* AbsoluteTouchHandler.m */,
+				E723D47A25532E08007413D9 /* Controller.h */,
+				E723D47725532E08007413D9 /* Controller.m */,
+				E723D47325532E08007413D9 /* ControllerSupport.h */,
+				E723D47925532E08007413D9 /* ControllerSupport.m */,
+				E723D47D25532E08007413D9 /* HapticContext.h */,
+				E723D48125532E08007413D9 /* HapticContext.m */,
+				E723D47E25532E08007413D9 /* KeyboardSupport.h */,
+				E723D48025532E08007413D9 /* KeyboardSupport.m */,
+				E723D47B25532E08007413D9 /* OnScreenControls.h */,
+				E723D47F25532E08007413D9 /* OnScreenControls.m */,
+				E723D47225532E08007413D9 /* RelativeTouchHandler.h */,
+				E723D47825532E08007413D9 /* RelativeTouchHandler.m */,
+				E723D47425532E08007413D9 /* StreamView.h */,
+				E723D47625532E08007413D9 /* StreamView.m */,
+				44A4DF4DEEC15EF8DE2B1C18 /* Cloudy-Bridging-Header.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		44A4D54D8E4FC726157DAB44 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				44A4D3A1BA3A8B2AB96CB81B /* UserDefaults.swift */,
 				44A4D58266EE8EF012AEA979 /* Navigator.swift */,
+				44A4DF345C0AE58872E1CC3A /* TemporarySettings.swift */,
+				44A4D9A6A736F81C6FB2AC3F /* Moonlight */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		44A4D5C66D1BB23F52E6221F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D1A39583BB7F49ABD541 /* Log.swift */,
+				44A4D7CF8072725D6F7680F7 /* Log.h */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		44A4D8E4BB9122C880E271A0 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D27EF5AD15611DBEC689 /* CloudyController.swift */,
+				44A4D70BD73D663A3E27A322 /* CloudyGameController.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		44A4D9A6A736F81C6FB2AC3F /* Moonlight */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D9F318B9593A6DD6F951 /* ButtonOptionSet.swift */,
+			);
+			path = Moonlight;
+			sourceTree = "<group>";
+		};
+		44A4DADDA5711D53FB841E0C /* Moonlight */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D437C146B24C01CA81BD /* View */,
+				44A4D29FB7293D197F2EF011 /* X1Kit */,
+				44A4DCA6363257612F65E2F5 /* Common */,
+				44A4D312712DC4A60D8F3068 /* Stream */,
+			);
+			path = Moonlight;
+			sourceTree = "<group>";
+		};
+		44A4DCA6363257612F65E2F5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D204255B64D65EF3ED9F /* Src */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		CAC63E443E260BECDB6A0652 /* Pods */ = {
@@ -139,18 +264,21 @@
 		E7B87E2525338121004358E3 /* Cloudy */ = {
 			isa = PBXGroup;
 			children = (
+				E712FF9725520978003CF78C /* Images.xcassets */,
 				E776E037254AE08E00684328 /* GoogleService-Info.plist */,
 				E7B87E2A25338121004358E3 /* RootViewController.swift */,
 				E7B87E2C25338121004358E3 /* Main.storyboard */,
 				E7B87E2F25338124004358E3 /* Assets.xcassets */,
 				E7B87E3125338124004358E3 /* LaunchScreen.storyboard */,
 				E7B87E3425338124004358E3 /* Info.plist */,
-				44A4D425AA9492A7F66964BC /* Config.swift */,
 				44A4D67F8889E455A547CB96 /* WebViewControllerBridge.swift */,
 				44A4D35F4287C173F7E152C8 /* Extension */,
 				44A4D54D8E4FC726157DAB44 /* Model */,
 				44A4D1438C45504101E3F0F6 /* App */,
 				44A4D58736385FBD2B75856B /* MenuViewController.swift */,
+				44A4D8E4BB9122C880E271A0 /* Library */,
+				44A4DADDA5711D53FB841E0C /* Moonlight */,
+				44A4D5C66D1BB23F52E6221F /* Util */,
 			);
 			path = Cloudy;
 			sourceTree = "<group>";
@@ -159,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				E740FE87254B641200533472 /* CloudyLibrary.xcframework */,
+				E723D44425532973007413D9 /* CloudyLibrary.framework */,
 				1BF8562B1619F13A7254171F /* Pods_Cloudy.framework */,
 			);
 			name = Frameworks;
@@ -175,7 +304,6 @@
 				E7B87E1F25338121004358E3 /* Sources */,
 				E7B87E2025338121004358E3 /* Frameworks */,
 				E7B87E2125338121004358E3 /* Resources */,
-				E7E6201C2549661900DD1BD0 /* Embed Frameworks */,
 				8877838D2666C00640B177EB /* [CP] Embed Pods Frameworks */,
 				E7D0EC47254AE1B90073892F /* Crashlytics */,
 			);
@@ -200,6 +328,7 @@
 				TargetAttributes = {
 					E7B87E2225338121004358E3 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -227,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7B87E3325338124004358E3 /* LaunchScreen.storyboard in Resources */,
+				E712FF9825520978003CF78C /* Images.xcassets in Resources */,
 				E776E038254AE08E00684328 /* GoogleService-Info.plist in Resources */,
 				E7B87E3025338124004358E3 /* Assets.xcassets in Resources */,
 				E7B87E2E25338121004358E3 /* Main.storyboard in Resources */,
@@ -302,18 +432,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E723D48925532E08007413D9 /* HapticContext.m in Sources */,
 				E7B87E2B25338121004358E3 /* RootViewController.swift in Sources */,
-				44A4DD02B25D92ECC2A0C48F /* Config.swift in Sources */,
 				44A4D07E127721BBFE3C3EA5 /* WebViewControllerBridge.swift in Sources */,
+				E723D48425532E08007413D9 /* RelativeTouchHandler.m in Sources */,
 				44A4D0FBB22CC22B053573C3 /* UIView.swift in Sources */,
 				44A4DB830BC41F131E122F7C /* GameController.swift in Sources */,
 				44A4D8940EA58BA835224F08 /* WKWebView.swift in Sources */,
+				E723D48825532E08007413D9 /* KeyboardSupport.m in Sources */,
 				44A4D8885DB5BE5C73C9FB87 /* UserDefaults.swift in Sources */,
 				44A4DD2F10965A88D83F5C0D /* SceneDelegate.swift in Sources */,
 				44A4D4CD5F66196CB7AD5CB0 /* AppDelegate.swift in Sources */,
 				44A4D7DCB15B8C4799D56BCA /* String.swift in Sources */,
+				E723D48525532E08007413D9 /* ControllerSupport.m in Sources */,
+				E723D48625532E08007413D9 /* AbsoluteTouchHandler.m in Sources */,
+				E723D48225532E08007413D9 /* StreamView.m in Sources */,
+				E723D48725532E08007413D9 /* OnScreenControls.m in Sources */,
+				E723D48325532E08007413D9 /* Controller.m in Sources */,
 				44A4D13A82DE5B9006FED3DC /* Navigator.swift in Sources */,
 				44A4DC86DF1DDD05E6FC802A /* MenuViewController.swift in Sources */,
+				44A4DB4BEAB929481B3024E4 /* CloudyController.swift in Sources */,
+				44A4D01B0487765908ADFCC8 /* CloudyGameController.swift in Sources */,
+				44A4D3B8AE0372A4C71E32EC /* TemporarySettings.swift in Sources */,
+				44A4D56785DE2ACC82B37F52 /* Log.swift in Sources */,
+				44A4DD2289A8D028B03463E0 /* X1Kit.swift in Sources */,
+				44A4D12458F1925C8B716EAD /* Limelight.m in Sources */,
+				44A4D240730D282493AC380E /* StreamConfiguration.m in Sources */,
+				44A4DCA503A87B314B8CB75A /* ButtonOptionSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
@@ -476,10 +622,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nomad5.Cloudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cloudy/Moonlight/View/Cloudy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -491,6 +639,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
@@ -506,10 +655,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nomad5.Cloudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cloudy/Moonlight/View/Cloudy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
