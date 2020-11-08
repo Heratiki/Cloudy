@@ -10,8 +10,9 @@
 		44A4D01B0487765908ADFCC8 /* CloudyGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D70BD73D663A3E27A322 /* CloudyGameController.swift */; };
 		44A4D07E127721BBFE3C3EA5 /* WebViewControllerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D67F8889E455A547CB96 /* WebViewControllerBridge.swift */; };
 		44A4D0FBB22CC22B053573C3 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D8A659024EF865AEB5D4 /* UIView.swift */; };
+		44A4D12458F1925C8B716EAD /* Limelight.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D42B4BF97B06DF2A6BEA /* Limelight.m */; };
 		44A4D13A82DE5B9006FED3DC /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D58266EE8EF012AEA979 /* Navigator.swift */; };
-		44A4D2443F5E7CB58CC631EC /* StreamConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D24B28F79C90DC4BA89C /* StreamConfiguration.m */; };
+		44A4D240730D282493AC380E /* StreamConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D47E3D9518C80384D8F4 /* StreamConfiguration.m */; };
 		44A4D3B8AE0372A4C71E32EC /* TemporarySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4DF345C0AE58872E1CC3A /* TemporarySettings.swift */; };
 		44A4D4CD5F66196CB7AD5CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D965A769BDED09733089 /* AppDelegate.swift */; };
 		44A4D56785DE2ACC82B37F52 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D1A39583BB7F49ABD541 /* Log.swift */; };
@@ -22,7 +23,6 @@
 		44A4DB4BEAB929481B3024E4 /* CloudyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D27EF5AD15611DBEC689 /* CloudyController.swift */; };
 		44A4DB830BC41F131E122F7C /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D999AA39891699C55D00 /* GameController.swift */; };
 		44A4DC86DF1DDD05E6FC802A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D58736385FBD2B75856B /* MenuViewController.swift */; };
-		44A4DCF72FF77E4FAAAE3997 /* Limelight.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A4DAF14A79B6A10BD95689 /* Limelight.m */; };
 		44A4DD02B25D92ECC2A0C48F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D425AA9492A7F66964BC /* Config.swift */; };
 		44A4DD2289A8D028B03463E0 /* X1Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D996514DEB85071D2DA7 /* X1Kit.swift */; };
 		44A4DD2F10965A88D83F5C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4DBCCBA86600B436045E4 /* SceneDelegate.swift */; };
@@ -46,26 +46,26 @@
 /* Begin PBXFileReference section */
 		1BF8562B1619F13A7254171F /* Pods_Cloudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cloudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A4D0057BF82C52A8F76A38 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		44A4D07D0DFBA9D3E8B37E56 /* StreamConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamConfiguration.h; sourceTree = "<group>"; };
 		44A4D1A39583BB7F49ABD541 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		44A4D1ECD25F10AB8DCE822E /* ButtonOptionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonOptionSet.swift; sourceTree = "<group>"; };
-		44A4D24B28F79C90DC4BA89C /* StreamConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamConfiguration.m; sourceTree = "<group>"; };
 		44A4D27EF5AD15611DBEC689 /* CloudyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudyController.swift; sourceTree = "<group>"; };
 		44A4D28CC8536DDE9F1F0250 /* WKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
 		44A4D3A1BA3A8B2AB96CB81B /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		44A4D425AA9492A7F66964BC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		44A4D42B4BF97B06DF2A6BEA /* Limelight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Limelight.m; sourceTree = "<group>"; };
+		44A4D47E3D9518C80384D8F4 /* StreamConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamConfiguration.m; sourceTree = "<group>"; };
 		44A4D58266EE8EF012AEA979 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		44A4D58736385FBD2B75856B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		44A4D67F8889E455A547CB96 /* WebViewControllerBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewControllerBridge.swift; sourceTree = "<group>"; };
 		44A4D70BD73D663A3E27A322 /* CloudyGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudyGameController.swift; sourceTree = "<group>"; };
+		44A4D7B73DC83248F99BFA6F /* Limelight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Limelight.h; sourceTree = "<group>"; };
 		44A4D7CF8072725D6F7680F7 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
 		44A4D8A659024EF865AEB5D4 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		44A4D965A769BDED09733089 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44A4D996514DEB85071D2DA7 /* X1Kit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = X1Kit.swift; sourceTree = "<group>"; };
 		44A4D999AA39891699C55D00 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
-		44A4DAF14A79B6A10BD95689 /* Limelight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Limelight.m; sourceTree = "<group>"; };
 		44A4DBCCBA86600B436045E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		44A4DBEE9D7096052AE20383 /* Limelight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Limelight.h; sourceTree = "<group>"; };
+		44A4DEAFE04C43372A474AF7 /* StreamConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamConfiguration.h; sourceTree = "<group>"; };
 		44A4DF345C0AE58872E1CC3A /* TemporarySettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporarySettings.swift; sourceTree = "<group>"; };
 		44A4DF4DEEC15EF8DE2B1C18 /* Cloudy-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cloudy-Bridging-Header.h"; sourceTree = "<group>"; };
 		79B35440DA7901C4949EFDC7 /* Pods-Cloudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cloudy.release.xcconfig"; path = "Target Support Files/Pods-Cloudy/Pods-Cloudy.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,12 +119,30 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		44A4D204255B64D65EF3ED9F /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D7B73DC83248F99BFA6F /* Limelight.h */,
+				44A4D42B4BF97B06DF2A6BEA /* Limelight.m */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
 		44A4D29FB7293D197F2EF011 /* X1Kit */ = {
 			isa = PBXGroup;
 			children = (
 				44A4D996514DEB85071D2DA7 /* X1Kit.swift */,
 			);
 			path = X1Kit;
+			sourceTree = "<group>";
+		};
+		44A4D312712DC4A60D8F3068 /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D47E3D9518C80384D8F4 /* StreamConfiguration.m */,
+				44A4DEAFE04C43372A474AF7 /* StreamConfiguration.h */,
+			);
+			path = Stream;
 			sourceTree = "<group>";
 		};
 		44A4D35F4287C173F7E152C8 /* Extension */ = {
@@ -195,13 +213,19 @@
 			isa = PBXGroup;
 			children = (
 				44A4D437C146B24C01CA81BD /* View */,
-				44A4DBEE9D7096052AE20383 /* Limelight.h */,
-				44A4D24B28F79C90DC4BA89C /* StreamConfiguration.m */,
-				44A4D07D0DFBA9D3E8B37E56 /* StreamConfiguration.h */,
-				44A4DAF14A79B6A10BD95689 /* Limelight.m */,
 				44A4D29FB7293D197F2EF011 /* X1Kit */,
+				44A4DCA6363257612F65E2F5 /* Common */,
+				44A4D312712DC4A60D8F3068 /* Stream */,
 			);
 			path = Moonlight;
+			sourceTree = "<group>";
+		};
+		44A4DCA6363257612F65E2F5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D204255B64D65EF3ED9F /* Src */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		CAC63E443E260BECDB6A0652 /* Pods */ = {
@@ -425,12 +449,12 @@
 				44A4DC86DF1DDD05E6FC802A /* MenuViewController.swift in Sources */,
 				44A4DB4BEAB929481B3024E4 /* CloudyController.swift in Sources */,
 				44A4D01B0487765908ADFCC8 /* CloudyGameController.swift in Sources */,
-				44A4D2443F5E7CB58CC631EC /* StreamConfiguration.m in Sources */,
 				44A4D3B8AE0372A4C71E32EC /* TemporarySettings.swift in Sources */,
-				44A4DCF72FF77E4FAAAE3997 /* Limelight.m in Sources */,
 				44A4DAF2826BE16F7B2D4871 /* ButtonOptionSet.swift in Sources */,
 				44A4D56785DE2ACC82B37F52 /* Log.swift in Sources */,
 				44A4DD2289A8D028B03463E0 /* X1Kit.swift in Sources */,
+				44A4D12458F1925C8B716EAD /* Limelight.m in Sources */,
+				44A4D240730D282493AC380E /* StreamConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
