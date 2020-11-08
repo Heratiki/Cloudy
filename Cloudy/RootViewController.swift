@@ -181,7 +181,7 @@ extension RootViewController: OverlayController {
 /// TODO extract this to a separate module with proper abstraction
 extension RootViewController: WKNavigationDelegate, WKUIDelegate {
 
-    /// When a stadia page finished loading, inject the controller override script
+    /// When a page finished loading, inject the controller override script
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // inject the script
         webView.injectControllerScript()
@@ -191,6 +191,10 @@ extension RootViewController: WKNavigationDelegate, WKUIDelegate {
                                                     canGoForward: webView.canGoForward))
         // save last visited url
         UserDefaults.standard.lastVisitedUrl = webView.url
+        // set user agent to iphone
+        // DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+        //     webView.customUserAgent = Navigator.Config.UserAgent.iPhone
+        // }
     }
 
     /// Handle popups

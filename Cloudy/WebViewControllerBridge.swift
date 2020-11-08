@@ -10,6 +10,7 @@ import GameController
     case external
 }
 
+/// Protocol to handle incoming cloudy controller sources
 @objc protocol ControllerDataReceiver {
     @objc func submit(controllerData: CloudyController, for type: ControlsSource)
 }
@@ -49,7 +50,6 @@ class WebViewControllerBridge: NSObject, WKScriptMessageHandlerWithReply, Contro
             case .external:
                 handleRegularController(with: replyHandler)
         }
-
     }
 
     /// Handle regular external controller
@@ -71,7 +71,13 @@ class WebViewControllerBridge: NSObject, WKScriptMessageHandlerWithReply, Contro
     }
 
     /// Handle touch controller
+    @available(*, deprecated, message: "Implement that functionality properly, no forwarding to native controller if we are using touch with geforce now")
     private func handleTouchController(with replyHandler: @escaping ReplyHandlerType) {
+        // Todo remove this hack
+        guard exportType == .regular else {
+            handleRegularController(with: replyHandler)
+            return
+        }
         if let controllerData = controllerData[.onScreen] {
             replyHandler(controllerData.jsonString, nil)
             return

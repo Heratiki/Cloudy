@@ -19,10 +19,10 @@
 		44A4D7DCB15B8C4799D56BCA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D0057BF82C52A8F76A38 /* String.swift */; };
 		44A4D8885DB5BE5C73C9FB87 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D3A1BA3A8B2AB96CB81B /* UserDefaults.swift */; };
 		44A4D8940EA58BA835224F08 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D28CC8536DDE9F1F0250 /* WKWebView.swift */; };
-		44A4DAF2826BE16F7B2D4871 /* ButtonOptionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D1ECD25F10AB8DCE822E /* ButtonOptionSet.swift */; };
 		44A4DB4BEAB929481B3024E4 /* CloudyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D27EF5AD15611DBEC689 /* CloudyController.swift */; };
 		44A4DB830BC41F131E122F7C /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D999AA39891699C55D00 /* GameController.swift */; };
 		44A4DC86DF1DDD05E6FC802A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D58736385FBD2B75856B /* MenuViewController.swift */; };
+		44A4DCA503A87B314B8CB75A /* ButtonOptionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D9F318B9593A6DD6F951 /* ButtonOptionSet.swift */; };
 		44A4DD2289A8D028B03463E0 /* X1Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D996514DEB85071D2DA7 /* X1Kit.swift */; };
 		44A4DD2F10965A88D83F5C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4DBCCBA86600B436045E4 /* SceneDelegate.swift */; };
 		5CDDBA53FB1B62159C8668EF /* Pods_Cloudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF8562B1619F13A7254171F /* Pods_Cloudy.framework */; };
@@ -46,7 +46,6 @@
 		1BF8562B1619F13A7254171F /* Pods_Cloudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cloudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A4D0057BF82C52A8F76A38 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		44A4D1A39583BB7F49ABD541 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		44A4D1ECD25F10AB8DCE822E /* ButtonOptionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonOptionSet.swift; sourceTree = "<group>"; };
 		44A4D27EF5AD15611DBEC689 /* CloudyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudyController.swift; sourceTree = "<group>"; };
 		44A4D28CC8536DDE9F1F0250 /* WKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
 		44A4D3A1BA3A8B2AB96CB81B /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		44A4D965A769BDED09733089 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44A4D996514DEB85071D2DA7 /* X1Kit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = X1Kit.swift; sourceTree = "<group>"; };
 		44A4D999AA39891699C55D00 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		44A4D9F318B9593A6DD6F951 /* ButtonOptionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonOptionSet.swift; sourceTree = "<group>"; };
 		44A4DBCCBA86600B436045E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		44A4DEAFE04C43372A474AF7 /* StreamConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamConfiguration.h; sourceTree = "<group>"; };
 		44A4DF345C0AE58872E1CC3A /* TemporarySettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporarySettings.swift; sourceTree = "<group>"; };
@@ -150,7 +150,6 @@
 				44A4D999AA39891699C55D00 /* GameController.swift */,
 				44A4D28CC8536DDE9F1F0250 /* WKWebView.swift */,
 				44A4D0057BF82C52A8F76A38 /* String.swift */,
-				44A4D1ECD25F10AB8DCE822E /* ButtonOptionSet.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -185,6 +184,7 @@
 				44A4D3A1BA3A8B2AB96CB81B /* UserDefaults.swift */,
 				44A4D58266EE8EF012AEA979 /* Navigator.swift */,
 				44A4DF345C0AE58872E1CC3A /* TemporarySettings.swift */,
+				44A4D9A6A736F81C6FB2AC3F /* Moonlight */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +205,14 @@
 				44A4D70BD73D663A3E27A322 /* CloudyGameController.swift */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		44A4D9A6A736F81C6FB2AC3F /* Moonlight */ = {
+			isa = PBXGroup;
+			children = (
+				44A4D9F318B9593A6DD6F951 /* ButtonOptionSet.swift */,
+			);
+			path = Moonlight;
 			sourceTree = "<group>";
 		};
 		44A4DADDA5711D53FB841E0C /* Moonlight */ = {
@@ -446,11 +454,11 @@
 				44A4DB4BEAB929481B3024E4 /* CloudyController.swift in Sources */,
 				44A4D01B0487765908ADFCC8 /* CloudyGameController.swift in Sources */,
 				44A4D3B8AE0372A4C71E32EC /* TemporarySettings.swift in Sources */,
-				44A4DAF2826BE16F7B2D4871 /* ButtonOptionSet.swift in Sources */,
 				44A4D56785DE2ACC82B37F52 /* Log.swift in Sources */,
 				44A4DD2289A8D028B03463E0 /* X1Kit.swift in Sources */,
 				44A4D12458F1925C8B716EAD /* Limelight.m in Sources */,
 				44A4D240730D282493AC380E /* StreamConfiguration.m in Sources */,
+				44A4DCA503A87B314B8CB75A /* ButtonOptionSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

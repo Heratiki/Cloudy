@@ -3,7 +3,8 @@
 import Foundation
 import GameController
 
-let closeToZero: (Float) -> Bool = { abs($0) < 0.0001 }
+/// Helper to see if a value is close to zero
+private let closeToZero: (Float) -> Bool = { abs($0) < 0.0001 }
 
 /// Struct for generating a js readable json that contains the
 /// proper values from the native controller
