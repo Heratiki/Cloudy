@@ -2,6 +2,7 @@
 
 import Foundation
 
+/// Button option mask used by moonlight
 struct ButtonOptionSet: OptionSet {
     let rawValue: Int
 
@@ -20,10 +21,4 @@ struct ButtonOptionSet: OptionSet {
     static let LS_CLK_FLAG  = ButtonOptionSet(rawValue: 0x0040)
     static let RS_CLK_FLAG  = ButtonOptionSet(rawValue: 0x0080)
     static let SPECIAL_FLAG = ButtonOptionSet(rawValue: 0x0400)
-}
-
-struct TriggerOptionSet: OptionSet {
-    let rawValue: Int
-
-
 }
