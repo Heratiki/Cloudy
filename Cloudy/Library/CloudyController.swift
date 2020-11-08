@@ -7,7 +7,7 @@ import GameController
 private let closeToZero: (Float) -> Bool = { abs($0) < 0.0001 }
 
 /// Hacky stuff for geforce now
-private var pulse: Bool = false
+private var shouldPulse: Bool = false
 
 /// Struct for generating a js readable json that contains the
 /// proper values from the native controller
@@ -32,7 +32,8 @@ private var pulse: Bool = false
         }
 
         func pulse() {
-            value = max(value - 0.002, 0) + 0.002
+            value = max(value - 0.002, 0) + (shouldPulse ? 0.002 : 0)
+            shouldPulse = !shouldPulse
         }
 
         static var untouched: Button {
@@ -101,10 +102,7 @@ private var pulse: Bool = false
     /// Export json string
     func toJson(for exportType: JsonType) -> String {
         if exportType == .geforceNow {
-            pulse = !pulse
-            if pulse {
-                buttons[6]?.pulse()
-            }
+            buttons[6]?.pulse()
         }
         return jsonString
     }
