@@ -26,7 +26,7 @@ class Navigator {
             static let geforceNow     = URL(string: "https://play.geforcenow.com")!
             static let boosteroid     = URL(string: "https://cloud.boosteroid.com")!
             static let nvidiaRoot     = URL(string: "https://www.nvidia.com")!
-            static let patreon        = URL(string: "https://www.patreon.com/mlostek")!
+            static let patreon        = URL(string: "https://www.patreon.com/cloudyApp")!
             static let paypal         = URL(string: "https://paypal.me/pools/c/8tPw2veZIm")!
         }
 
