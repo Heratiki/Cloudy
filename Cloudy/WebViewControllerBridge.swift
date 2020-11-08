@@ -4,43 +4,32 @@ import Foundation
 import WebKit
 import GameController
 
+@objc enum ControlsSource: Int {
+    case none
+    case onScreen
+    case external
+}
+
+@objc protocol ControllerDataReceiver {
+    @objc func submit(controllerData: CloudyController, for type: ControlsSource)
+}
 
 /// Main module that connects the web views controller scripts to the native controller handling
-@objc class WebViewControllerBridge: NSObject, WKScriptMessageHandlerWithReply {
+class WebViewControllerBridge: NSObject, WKScriptMessageHandlerWithReply, ControllerDataReceiver {
 
-    enum ControlsSource {
-        case none
-        case onScreen
-        case external
-    }
-
+    /// Alias for the reply type back to the webWiew
     typealias ReplyHandlerType = (Any?, String?) -> Void
 
-    @objc public static func submit(controllerNumber: CShort, activeGamepadMask: CShort,
-                                    buttonFlags: CShort, leftTrigger: CUnsignedChar, rightTrigger: CUnsignedChar,
-                                    leftStickX: CShort, leftStickY: CShort, rightStickX: CShort, rightStickY: CShort) {
-        virtualController = CloudyController.createFrom(controllerNumber: controllerNumber,
-                                                        activeGamepadMask: activeGamepadMask,
-                                                        buttonFlags: buttonFlags,
-                                                        leftTrigger: leftTrigger,
-                                                        rightTrigger: rightTrigger,
-                                                        leftStickX: leftStickX,
-                                                        leftStickY: leftStickY,
-                                                        rightStickX: rightStickX,
-                                                        rightStickY: rightStickY)
-    }
-
-    /// TODO REMOVE THIS HACK
-    static var virtualController: CloudyController? = nil
+    private var controllerData:         [ControlsSource: CloudyController] = [:]
 
     /// Remember last controller snapshot
-    var lastControllerSnapshot: GCExtendedGamepad?         = nil
+    private var lastControllerSnapshot: GCExtendedGamepad?                 = nil
 
     /// current export type
-    var exportType:             GCExtendedGamepad.JsonType = .regular
+    var exportType:     GCExtendedGamepad.JsonType = .regular
 
     /// the controls source to use
-    var controlsSource:         ControlsSource             = .none
+    var controlsSource: ControlsSource             = .none
 
     /// Handle user content controller with proper native controller data reply
     func userContentController(_ userContentController: WKUserContentController,
@@ -83,10 +72,15 @@ import GameController
 
     /// Handle touch controller
     private func handleTouchController(with replyHandler: @escaping ReplyHandlerType) {
-        if let virtualController = WebViewControllerBridge.virtualController {
-            replyHandler(virtualController.jsonString, nil)
+        if let controllerData = controllerData[.onScreen] {
+            replyHandler(controllerData.jsonString, nil)
             return
         }
         replyHandler(nil, nil)
+    }
+
+    /// Receive the controller data
+    func submit(controllerData: CloudyController, for type: ControlsSource) {
+        self.controllerData[type] = controllerData
     }
 }

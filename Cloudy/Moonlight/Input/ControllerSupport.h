@@ -10,6 +10,7 @@
 #import "Controller.h"
 
 @class OnScreenControls;
+@protocol ControllerDataReceiver;
 
 @protocol InputPresenceDelegate <NSObject>
 
@@ -21,7 +22,7 @@
 
 @interface ControllerSupport : NSObject
 
-    - (id)initWithConfig:(StreamConfiguration *)streamConfig presenceDelegate:(id <InputPresenceDelegate>)delegate;
+    - (id)initWithConfig:(StreamConfiguration *)streamConfig presenceDelegate:(id <InputPresenceDelegate>)delegate controllerDataReceiver:(id <ControllerDataReceiver>)controllerDataReceiverDelegate;
 
     - (void)initAutoOnScreenControlMode:(OnScreenControls *)osc;
 

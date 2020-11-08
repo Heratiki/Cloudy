@@ -93,7 +93,9 @@ class RootViewController: UIViewController, OnScreenControllerUpdater {
         // stream config
         let streamConfig      = StreamConfiguration()
         // Controller support
-        let controllerSupport = ControllerSupport(config: streamConfig, presenceDelegate: self)
+        let controllerSupport = ControllerSupport(config: streamConfig,
+                                                  presenceDelegate: self,
+                                                  controllerDataReceiver: webViewControllerBridge)
         // stream view
         let streamView        = StreamView(frame: containerOnScreenController.bounds)
         streamView.setupStreamView(controllerSupport, interactionDelegate: self, config: streamConfig)

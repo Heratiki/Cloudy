@@ -28,6 +28,7 @@
                             </view>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Jf-az-E1Q" userLabel="MENU">
                                 <rect key="frame" x="0.0" y="750" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="BeX-UU-c7b"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="M6L-wL-Ma7"/>
@@ -37,6 +38,7 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="riv-H8-0QR"/>
                                 </constraints>
                                 <state key="normal">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <imageReference key="image" image="gearshape" catalog="system" symbolScale="large" renderingMode="original"/>
                                 </state>
                                 <connections>

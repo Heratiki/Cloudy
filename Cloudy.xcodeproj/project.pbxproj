@@ -23,7 +23,6 @@
 		44A4DB4BEAB929481B3024E4 /* CloudyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D27EF5AD15611DBEC689 /* CloudyController.swift */; };
 		44A4DB830BC41F131E122F7C /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D999AA39891699C55D00 /* GameController.swift */; };
 		44A4DC86DF1DDD05E6FC802A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D58736385FBD2B75856B /* MenuViewController.swift */; };
-		44A4DD02B25D92ECC2A0C48F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D425AA9492A7F66964BC /* Config.swift */; };
 		44A4DD2289A8D028B03463E0 /* X1Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4D996514DEB85071D2DA7 /* X1Kit.swift */; };
 		44A4DD2F10965A88D83F5C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A4DBCCBA86600B436045E4 /* SceneDelegate.swift */; };
 		5CDDBA53FB1B62159C8668EF /* Pods_Cloudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF8562B1619F13A7254171F /* Pods_Cloudy.framework */; };
@@ -51,7 +50,6 @@
 		44A4D27EF5AD15611DBEC689 /* CloudyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudyController.swift; sourceTree = "<group>"; };
 		44A4D28CC8536DDE9F1F0250 /* WKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
 		44A4D3A1BA3A8B2AB96CB81B /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		44A4D425AA9492A7F66964BC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		44A4D42B4BF97B06DF2A6BEA /* Limelight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Limelight.m; sourceTree = "<group>"; };
 		44A4D47E3D9518C80384D8F4 /* StreamConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamConfiguration.m; sourceTree = "<group>"; };
 		44A4D58266EE8EF012AEA979 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 				E7B87E2F25338124004358E3 /* Assets.xcassets */,
 				E7B87E3125338124004358E3 /* LaunchScreen.storyboard */,
 				E7B87E3425338124004358E3 /* Info.plist */,
-				44A4D425AA9492A7F66964BC /* Config.swift */,
 				44A4D67F8889E455A547CB96 /* WebViewControllerBridge.swift */,
 				44A4D35F4287C173F7E152C8 /* Extension */,
 				44A4D54D8E4FC726157DAB44 /* Model */,
@@ -429,7 +426,6 @@
 			files = (
 				E723D48925532E08007413D9 /* HapticContext.m in Sources */,
 				E7B87E2B25338121004358E3 /* RootViewController.swift in Sources */,
-				44A4DD02B25D92ECC2A0C48F /* Config.swift in Sources */,
 				44A4D07E127721BBFE3C3EA5 /* WebViewControllerBridge.swift in Sources */,
 				E723D48425532E08007413D9 /* RelativeTouchHandler.m in Sources */,
 				44A4D0FBB22CC22B053573C3 /* UIView.swift in Sources */,

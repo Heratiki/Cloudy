@@ -55,30 +55,6 @@ int LiSendControllerEvent(short buttonFlags, unsigned char leftTrigger, unsigned
     return 0;
 }
 
-// This function queues a controller event to be sent to the remote server. The controllerNumber
-// parameter is a zero-based index of which controller this event corresponds to. The largest legal
-// controller number is 3 (for a total of 4 controllers, the Xinput maximum). On generation 3 servers (GFE 2.1.x),
-// these will be sent as controller 0 regardless of the controllerNumber parameter. The activeGamepadMask
-// parameter is a bitfield with bits set for each controller present up to a maximum of 4 (0xF).
-int LiSendMultiControllerEvent(short controllerNumber, short activeGamepadMask,
-                               short buttonFlags, unsigned char leftTrigger, unsigned char rightTrigger,
-                               short leftStickX, short leftStickY, short rightStickX, short rightStickY)
-{
-    LogD([NSString stringWithFormat:@"LiSendMultiControllerEvent: %i, %i, %i, %i, %i, %i, %i, %i, %i",
-                                    controllerNumber, activeGamepadMask, buttonFlags, leftTrigger, rightTrigger,
-                                    leftStickX, leftStickY, rightStickX, rightStickY]);
-    [WebViewControllerBridge submitWithControllerNumber:controllerNumber
-                             activeGamepadMask:activeGamepadMask
-                             buttonFlags:buttonFlags
-                             leftTrigger:leftTrigger
-                             rightTrigger:rightTrigger
-                             leftStickX:leftStickX
-                             leftStickY:leftStickY
-                             rightStickX:rightStickX
-                             rightStickY:rightStickY];
-    return 0;
-}
-
 // This function queues a vertical scroll event to the remote server.
 // The number of "clicks" is multiplied by WHEEL_DELTA (120) before
 // being sent to the PC.

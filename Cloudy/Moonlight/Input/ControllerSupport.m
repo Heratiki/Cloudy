@@ -28,9 +28,10 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
         id _keyboardConnectObserver;
         id _keyboardDisconnectObserver;
 
-        NSLock                     *_controllerStreamLock;
-        NSMutableDictionary        *_controllers;
-        id <InputPresenceDelegate> _presenceDelegate;
+        NSLock                      *_controllerStreamLock;
+        NSMutableDictionary         *_controllers;
+        id <InputPresenceDelegate>  _presenceDelegate;
+        id <ControllerDataReceiver> controllerDataReceiver;
 
         float accumulatedDeltaX;
         float accumulatedDeltaY;
@@ -227,8 +228,16 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
         @synchronized(controller)
         {
             // Player 1 is always present for OSC
-            LiSendMultiControllerEvent(_multiController ? controller.playerIndex : 0,
-                                       (_multiController ? _controllerNumbers : 1) | (_oscEnabled ? 1 : 0), controller.lastButtonFlags, controller.lastLeftTrigger, controller.lastRightTrigger, controller.lastLeftStickX, controller.lastLeftStickY, controller.lastRightStickX, controller.lastRightStickY);
+            CloudyController *cloudyController = [[CloudyController alloc] initWithControllerNumber:_multiController ? controller.playerIndex : 0
+                                                                    activeGamepadMask:(_multiController ? _controllerNumbers : 1) | (_oscEnabled ? 1 : 0)
+                                                                    buttonFlags:controller.lastButtonFlags
+                                                                    leftTrigger:controller.lastLeftTrigger
+                                                                    rightTrigger:controller.lastRightTrigger
+                                                                    leftStickX:controller.lastLeftStickX
+                                                                    leftStickY:controller.lastLeftStickY
+                                                                    rightStickX:controller.lastRightStickX
+                                                                    rightStickY:controller.lastRightStickY];
+            [controllerDataReceiver submitWithControllerData:cloudyController for:ControlsSourceOnScreen];
         }
         [_controllerStreamLock unlock];
     }
@@ -554,7 +563,9 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
             // Ensure the virtual gamepad disappears to avoid confusing some games.
             // If the mouse and keyboard disconnect later, it will reappear when the
             // first OSC input is received.
-            LiSendMultiControllerEvent(0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+            CloudyController *cloudyController = [[CloudyController alloc] init];
+            [controllerDataReceiver submitWithControllerData:cloudyController for:ControlsSourceOnScreen];
         }
 
         [_osc setLevel:level];
@@ -689,17 +700,17 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
         return _controllers.count;
     }
 
-    - (id)initWithConfig:(StreamConfiguration *)streamConfig presenceDelegate:(id <InputPresenceDelegate>)delegate
+    - (id)initWithConfig:(StreamConfiguration *)streamConfig presenceDelegate:(id <InputPresenceDelegate>)delegate controllerDataReceiver:(id <ControllerDataReceiver>)controllerDataReceiverDelegate
     {
         self = [super init];
 
-        _controllerStreamLock = [[NSLock alloc] init];
-        _controllers          = [[NSMutableDictionary alloc] init];
-        _controllerNumbers    = 0;
-        _multiController      = streamConfig.multiController;
-        _presenceDelegate     = delegate;
-
-        _player0osc = [[Controller alloc] init];
+        _controllerStreamLock  = [[NSLock alloc] init];
+        _controllers           = [[NSMutableDictionary alloc] init];
+        _controllerNumbers     = 0;
+        _multiController       = streamConfig.multiController;
+        _presenceDelegate      = delegate;
+        controllerDataReceiver = controllerDataReceiverDelegate;
+        _player0osc            = [[Controller alloc] init];
         _player0osc.playerIndex = 0;
 
         TemporarySettings *settings = [[TemporarySettings alloc] init];
