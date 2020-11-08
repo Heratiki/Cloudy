@@ -34,6 +34,8 @@
 
     - (void)showOnScreenControls;
 
+    - (void)updateOnScreenControls;
+
     - (OnScreenControlsLevel)getCurrentOscState;
 
 #if !TARGET_OS_TV

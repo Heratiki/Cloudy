@@ -76,7 +76,7 @@ static const double X1_MOUSE_SPEED_DIVISOR = 2.5;
         }
 
         onScreenControls = [[OnScreenControls alloc] initWithView:self controllerSup:controllerSupport];
-        OnScreenControlsLevel level = settings.onscreenControls;
+        OnScreenControlsLevel level = NSUserDefaults.standardUserDefaults.onScreenControlsLevel;
         if(settings.absoluteTouchMode)
         {
             LogI(@"On-screen controls disabled in absolute touch mode");
@@ -157,6 +157,14 @@ static const double X1_MOUSE_SPEED_DIVISOR = 2.5;
     {
 #if !TARGET_OS_TV
         [onScreenControls show];
+        [self becomeFirstResponder];
+#endif
+    }
+
+    - (void)updateOnScreenControls
+    {
+#if !TARGET_OS_TV
+        [onScreenControls setLevel:NSUserDefaults.standardUserDefaults.onScreenControlsLevel];
         [self becomeFirstResponder];
 #endif
     }

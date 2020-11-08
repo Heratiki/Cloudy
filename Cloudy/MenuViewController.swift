@@ -27,18 +27,18 @@ class MenuViewController: UIViewController {
 
     /// View references
     @IBOutlet var shadowViews: [UIView]!
-    @IBOutlet weak var userAgentTextField:       UITextField!
-    @IBOutlet weak var manualUserAgent:          UISwitch!
-    @IBOutlet weak var addressBar:               UITextField!
-    @IBOutlet weak var backButton:               UIButton!
-    @IBOutlet weak var forwardButton:            UIButton!
-    @IBOutlet weak var buttonGeforceNow:         UIImageView!
-    @IBOutlet weak var buttonStadia:             UIImageView!
-    @IBOutlet weak var buttonBoosteroid:         UIImageView!
-    @IBOutlet weak var buttonPatreon:            UIImageView!
-    @IBOutlet weak var buttonPayPal:             UIImageView!
-    @IBOutlet weak var allowInlineFeedback:      UISwitch!
-    @IBOutlet weak var onScreenControllerSwitch: UISwitch!
+    @IBOutlet weak var userAgentTextField:        UITextField!
+    @IBOutlet weak var manualUserAgent:           UISwitch!
+    @IBOutlet weak var addressBar:                UITextField!
+    @IBOutlet weak var backButton:                UIButton!
+    @IBOutlet weak var forwardButton:             UIButton!
+    @IBOutlet weak var buttonGeforceNow:          UIImageView!
+    @IBOutlet weak var buttonStadia:              UIImageView!
+    @IBOutlet weak var buttonBoosteroid:          UIImageView!
+    @IBOutlet weak var buttonPatreon:             UIImageView!
+    @IBOutlet weak var buttonPayPal:              UIImageView!
+    @IBOutlet weak var allowInlineFeedback:       UISwitch!
+    @IBOutlet weak var onScreenControllerControl: UISegmentedControl!
 
     /// Some injections
     var webController:             WebController?
@@ -75,6 +75,7 @@ class MenuViewController: UIViewController {
         userAgentTextField.text = UserDefaults.standard.manualUserAgent
         manualUserAgent.isOn = UserDefaults.standard.useManualUserAgent
         allowInlineFeedback.isOn = UserDefaults.standard.allowInlineMedia
+        onScreenControllerControl.selectedSegmentIndex = UserDefaults.standard.onScreenControlsLevel.rawValue
         // apply shadows
         shadowViews.forEach { $0.addShadow() }
     }
@@ -157,12 +158,6 @@ extension MenuViewController {
         UserDefaults.standard.manualUserAgent = userAgentTextField.text
     }
 
-    /// On screen controller changed
-    @IBAction func onShowOnScreenControllerChanged(_ sender: Any) {
-        UserDefaults.standard.showOnScreenController = onScreenControllerSwitch.isOn
-        onScreenControllerUpdater?.updateOnScreenController()
-    }
-
     /// Handle click outside of any element
     @objc func onOverlayClosePressed(_ sender: Any) {
         hideMenu()
@@ -196,5 +191,15 @@ extension MenuViewController {
     @objc func onPayPalButtonPressed(_ sender: Any) {
         overlayController?.showOverlay(for: Navigator.Config.Url.paypal.absoluteString)
         hideMenu()
+    }
+
+    /// On screen controls value changed in menu
+    @IBAction func onOnScreenControlChanged(_ sender: Any) {
+        guard let newLevel = OnScreenControlsLevel(rawValue: onScreenControllerControl.selectedSegmentIndex) else {
+            Log.e("Something went wrong parsing the selected on screen controls level: \(onScreenControllerControl.selectedSegmentIndex)")
+            return
+        }
+        UserDefaults.standard.onScreenControlsLevel = newLevel
+        onScreenControllerUpdater?.updateOnScreenController(with: newLevel)
     }
 }

@@ -10,7 +10,7 @@ class FullScreenWKWebView: WKWebView {
 }
 
 protocol OnScreenControllerUpdater {
-    func updateOnScreenController()
+    func updateOnScreenController(with value: OnScreenControlsLevel)
 }
 
 class RootViewController: UIViewController, OnScreenControllerUpdater {
@@ -21,13 +21,15 @@ class RootViewController: UIViewController, OnScreenControllerUpdater {
 
     /// The hacked webView
     private var webView:   FullScreenWKWebView!
-    private let navigator: Navigator = Navigator()
+    private let navigator: Navigator       = Navigator()
 
     /// The menu controller
-    var menu: MenuController?   = nil
+    private var menu:      MenuController? = nil
 
     /// The bridge between controller and web view
-    let webViewControllerBridge = WebViewControllerBridge()
+    private let webViewControllerBridge    = WebViewControllerBridge()
+
+    private var  streamView:                     StreamView?
 
     /// By default hide the status bar
     override var prefersStatusBarHidden:         Bool {
@@ -98,12 +100,15 @@ class RootViewController: UIViewController, OnScreenControllerUpdater {
         streamView.showOnScreenControls()
         containerOnScreenController.addSubview(streamView)
         streamView.fillParent()
-        updateOnScreenController()
+        self.streamView = streamView
+        updateOnScreenController(with: UserDefaults.standard.onScreenControlsLevel)
     }
 
     /// Update visibility of onscreen controller
-    func updateOnScreenController() {
-        containerOnScreenController.alpha = UserDefaults.standard.showOnScreenController ? 1 : 0
+    func updateOnScreenController(with value: OnScreenControlsLevel) {
+        containerOnScreenController.alpha = value == .off ? 0 : 1
+        webViewControllerBridge.controlsSource = value == .off ? .external : .onScreen
+        streamView?.updateOnScreenControls()
     }
 
     /// Tapped on the menu item
@@ -114,21 +119,21 @@ class RootViewController: UIViewController, OnScreenControllerUpdater {
 
 extension RootViewController: UserInteractionDelegate {
     open func userInteractionBegan() {
-        print("userInteractionBegan")
+        Log.d("userInteractionBegan")
     }
 
     open func userInteractionEnded() {
-        print("userInteractionEnded")
+        Log.d("userInteractionEnded")
     }
 }
 
 extension RootViewController: InputPresenceDelegate {
     open func gamepadPresenceChanged() {
-        print("gamepadPresenceChanged")
+        Log.d("gamepadPresenceChanged")
     }
 
     open func mousePresenceChanged() {
-        print("gamepadPresenceChanged")
+        Log.d("gamepadPresenceChanged")
     }
 }
 

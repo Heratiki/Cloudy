@@ -672,8 +672,7 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
             mask = 0x1;
         }
 
-        TemporarySettings     *settings = [[TemporarySettings alloc] init];
-        OnScreenControlsLevel level     = settings.onscreenControls;
+        OnScreenControlsLevel level = NSUserDefaults.standardUserDefaults.onScreenControlsLevel;
 
         // Even if no gamepads are present, we will always count one if OSC is enabled,
         // or it's set to auto and no keyboard or mouse is present.
@@ -704,7 +703,7 @@ static const double MOUSE_SPEED_DIVISOR = 2.5;
         _player0osc.playerIndex = 0;
 
         TemporarySettings *settings = [[TemporarySettings alloc] init];
-        _oscEnabled = settings.onscreenControls != OnScreenControlsLevelOff;
+        _oscEnabled = NSUserDefaults.standardUserDefaults.onScreenControlsLevel != OnScreenControlsLevelOff;
 
         LogI(@"Number of supported controllers connected: %d", [ControllerSupport getGamepadCount]);
         LogI(@"Multi-controller: %d", _multiController);

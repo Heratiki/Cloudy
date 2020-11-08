@@ -360,16 +360,18 @@
                                                                         <rect key="frame" x="0.0" y="116" width="1040" height="50"/>
                                                                         <subviews>
                                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="grV-ih-Oun">
-                                                                                <rect key="frame" x="10" y="-5" width="247" height="32"/>
+                                                                                <rect key="frame" x="10" y="-5" width="185" height="32"/>
                                                                                 <segments>
                                                                                     <segment title="Off"/>
-                                                                                    <segment title="Auto"/>
                                                                                     <segment title="Simple"/>
                                                                                     <segment title="Full"/>
                                                                                 </segments>
+                                                                                <connections>
+                                                                                    <action selector="onOnScreenControlChanged:" destination="FIN-ZL-Y0N" eventType="valueChanged" id="ldA-iy-gB9"/>
+                                                                                </connections>
                                                                             </segmentedControl>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td2-Ny-Ux1" userLabel="Label">
-                                                                                <rect key="frame" x="277" y="0.0" width="198" height="20.5"/>
+                                                                                <rect key="frame" x="215" y="0.0" width="198" height="20.5"/>
                                                                                 <attributedString key="attributedText">
                                                                                     <fragment content="Show on screen controller">
                                                                                         <attributes>
@@ -511,6 +513,7 @@
                         <outlet property="buttonStadia" destination="0VM-PV-WdW" id="CxB-kR-0dV"/>
                         <outlet property="forwardButton" destination="HL9-MD-JBo" id="kn6-je-sLp"/>
                         <outlet property="manualUserAgent" destination="LXn-E5-rXe" id="hzl-Bl-Www"/>
+                        <outlet property="onScreenControllerControl" destination="grV-ih-Oun" id="06G-0H-EUm"/>
                         <outlet property="userAgentTextField" destination="Vuy-QH-aB5" id="nRe-Af-ZOT"/>
                         <outletCollection property="shadowViews" destination="0VM-PV-WdW" collectionClass="NSMutableArray" id="nGm-H4-zI4"/>
                         <outletCollection property="shadowViews" destination="Kdq-FP-3hb" collectionClass="NSMutableArray" id="0bt-iL-VMa"/>
