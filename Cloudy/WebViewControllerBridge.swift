@@ -27,10 +27,10 @@ class WebViewControllerBridge: NSObject, WKScriptMessageHandlerWithReply, Contro
     private var lastControllerSnapshot: GCExtendedGamepad?                 = nil
 
     /// current export type
-    var exportType:     GCExtendedGamepad.JsonType = .regular
+    var exportType:     CloudyController.JsonType = .regular
 
     /// the controls source to use
-    var controlsSource: ControlsSource             = .none
+    var controlsSource: ControlsSource            = .none
 
     /// Handle user content controller with proper native controller data reply
     func userContentController(_ userContentController: WKUserContentController,
@@ -67,19 +67,13 @@ class WebViewControllerBridge: NSObject, WKScriptMessageHandlerWithReply, Contro
         }
         // update and save
         lastControllerSnapshot = currentControllerState.capture()
-        replyHandler(currentControllerState.toJson(for: exportType), nil)
+        replyHandler(currentControllerState.toCloudyController()?.toJson(for: exportType), nil)
     }
 
     /// Handle touch controller
-    @available(*, deprecated, message: "Implement that functionality properly, no forwarding to native controller if we are using touch with geforce now")
     private func handleTouchController(with replyHandler: @escaping ReplyHandlerType) {
-        // Todo remove this hack
-        guard exportType == .regular else {
-            handleRegularController(with: replyHandler)
-            return
-        }
         if let controllerData = controllerData[.onScreen] {
-            replyHandler(controllerData.jsonString, nil)
+            replyHandler(controllerData.toJson(for: exportType), nil)
             return
         }
         replyHandler(nil, nil)

@@ -40,7 +40,7 @@ class Navigator {
     struct Navigation {
         let userAgent:    String?
         let forwardToUrl: URL?
-        let bridgeType:   GCExtendedGamepad.JsonType
+        let bridgeType:   CloudyController.JsonType
     }
 
     /// The manual fixed user agent override

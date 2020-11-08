@@ -15,30 +15,19 @@ extension GCControllerButtonInput {
 /// Convenience extension
 extension GCExtendedGamepad {
 
-    /// Enum for the specific json export
-    public enum JsonType {
-        case regular
-        case geforceNow
-    }
-
-    /// Hacked pulsing
-    /// TODO find a proper solution
-    private static var pulse: Bool = false
-
     /// Constant static id
-    public static var  id:    String {
+    public static var id: String {
         "Xbox Wireless Controller (STANDARD GAMEPAD Vendor: 045e Product: 02fd)"
     }
 
     /// Convert to json
-    public func toJson(for type: JsonType) -> String? {
+    func toCloudyController() -> CloudyController? {
         guard let buttonOptions = buttonOptions,
               let buttonHome = buttonHome,
               let leftThumbstickButton = leftThumbstickButton,
               let rightThumbstickButton = rightThumbstickButton else {
             return nil
         }
-        GCExtendedGamepad.pulse = !GCExtendedGamepad.pulse
         return CloudyController(
                 axes: [
                     leftThumbstick.xAxis.value,
@@ -53,7 +42,7 @@ extension GCExtendedGamepad {
                     /*  3 */ buttonY.controller,
                     /*  4 */ leftShoulder.controller,
                     /*  5 */ rightShoulder.controller,
-                    /*  6 */ type == .regular ? leftTrigger.controller : CloudyController.Button(pressed: leftTrigger.isPressed, touched: leftTrigger.isTouched, value: max(leftTrigger.value - 0.002, 0) + (GCExtendedGamepad.pulse ? 0.002 : 0)),
+                    /*  6 */ leftTrigger.controller,
                     /*  7 */ rightTrigger.controller,
                     /*  8 */ buttonOptions.controller,
                     /*  9 */ buttonMenu.controller,
@@ -65,6 +54,5 @@ extension GCExtendedGamepad {
                     /* 15 */ dpad.right.controller,
                     /* 16 */ buttonHome.controller,
                 ])
-                .jsonString
     }
 }

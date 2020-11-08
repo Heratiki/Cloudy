@@ -6,20 +6,33 @@ import GameController
 /// Helper to see if a value is close to zero
 private let closeToZero: (Float) -> Bool = { abs($0) < 0.0001 }
 
+/// Hacky stuff for geforce now
+private var pulse: Bool = false
+
 /// Struct for generating a js readable json that contains the
 /// proper values from the native controller
 @objc class CloudyController: NSObject, Encodable {
+
+    /// Enum for the specific json export
+    public enum JsonType {
+        case regular
+        case geforceNow
+    }
 
     /// Button of the controller
     @objc public class Button: NSObject, Encodable {
         let pressed: Bool
         let touched: Bool
-        let value:   Float
+        var value:   Float
 
         init(pressed: Bool, touched: Bool, value: Float) {
             self.pressed = pressed
             self.touched = touched
             self.value = value
+        }
+
+        func pulse() {
+            value = max(value - 0.002, 0) + 0.002
         }
 
         static var untouched: Button {
@@ -85,8 +98,19 @@ private let closeToZero: (Float) -> Bool = { abs($0) < 0.0001 }
         ]
     }
 
+    /// Export json string
+    func toJson(for exportType: JsonType) -> String {
+        if exportType == .geforceNow {
+            pulse = !pulse
+            if pulse {
+                buttons[6]?.pulse()
+            }
+        }
+        return jsonString
+    }
+
     /// Conversion to json
-    var jsonString: String {
+    private var jsonString: String {
         guard let data = try? JSONEncoder().encode(self),
               let string = String(data: data, encoding: .utf8) else {
             return "{}"
