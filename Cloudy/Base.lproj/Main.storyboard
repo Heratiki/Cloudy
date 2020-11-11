@@ -408,24 +408,27 @@
                                                                             <imageReference key="image" image="trash.fill" catalog="system" symbolScale="large"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="onDeleteCachePressed:" destination="FIN-ZL-Y0N" eventType="touchUpInside" id="d6q-43-2ny"/>
+                                                                            <action selector="onResetCacheAndCookiesPressed:" destination="FIN-ZL-Y0N" eventType="touchUpInside" id="aIu-2I-Fa6"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete cache and cookies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MI8-Bz-UMi" userLabel="Label">
-                                                                        <rect key="frame" x="69" y="2.5" width="195.5" height="20.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atn-TT-72T">
+                                                                        <rect key="frame" x="69" y="-2" width="176" height="30"/>
+                                                                        <state key="normal" title="Delete cache and cookies">
+                                                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="onResetCacheAndCookiesPressed:" destination="FIN-ZL-Y0N" eventType="touchUpOutside" id="Dhw-F1-Oii"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="7HL-oZ-bIE" firstAttribute="leading" secondItem="dAd-te-Bru" secondAttribute="leading" constant="10" id="L8q-HC-gEb"/>
                                                                     <constraint firstAttribute="height" constant="50" id="S2N-cP-jEY"/>
                                                                     <constraint firstItem="7HL-oZ-bIE" firstAttribute="top" secondItem="dAd-te-Bru" secondAttribute="top" id="iPP-Ob-sG5"/>
-                                                                    <constraint firstItem="MI8-Bz-UMi" firstAttribute="centerY" secondItem="7HL-oZ-bIE" secondAttribute="centerY" id="p6q-P6-0ID"/>
-                                                                    <constraint firstItem="MI8-Bz-UMi" firstAttribute="leading" secondItem="7HL-oZ-bIE" secondAttribute="trailing" constant="10" id="piX-6s-b3Y"/>
-                                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MI8-Bz-UMi" secondAttribute="trailing" constant="20" symbolic="YES" id="tZe-kH-KL0"/>
+                                                                    <constraint firstItem="atn-TT-72T" firstAttribute="centerY" secondItem="7HL-oZ-bIE" secondAttribute="centerY" id="jgj-Oq-c6g"/>
+                                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="atn-TT-72T" secondAttribute="trailing" constant="20" symbolic="YES" id="nCL-tf-XYu"/>
+                                                                    <constraint firstItem="atn-TT-72T" firstAttribute="leading" secondItem="7HL-oZ-bIE" secondAttribute="trailing" constant="10" id="stm-Ba-Zef"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

@@ -139,7 +139,7 @@ extension MenuViewController {
     }
 
     /// Delete cache pressed
-    @IBAction func onDeleteCachePressed(_ sender: Any) {
+    @IBAction func onResetCacheAndCookiesPressed(_ sender: Any) {
         webController?.clearCache()
     }
 
