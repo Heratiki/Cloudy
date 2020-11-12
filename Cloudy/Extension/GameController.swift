@@ -2,7 +2,6 @@
 
 import Foundation
 import GameController
-import CloudyLibrary
 
 /// Infix operator declaration
 infix operator =~: ComparisonPrecedence

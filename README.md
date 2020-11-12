@@ -27,6 +27,12 @@ A cloud-gaming ready browser for iOS.
 - Keyboard input and control in games
 - Virtual controller input
 
+## Further development planned
+
+- Proper dependency injection
+- Unit test!
+- Better abstraction of modules
+
 ## Trello development board
 
 Feel free to discuss features, bugs and other improvement requests on the public Trello board.

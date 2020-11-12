@@ -9,20 +9,27 @@ class FullScreenWKWebView: WKWebView {
     }
 }
 
-class RootViewController: UIViewController {
+protocol OnScreenControllerUpdater {
+    func updateOnScreenController(with value: OnScreenControlsLevel)
+}
+
+class RootViewController: UIViewController, OnScreenControllerUpdater {
 
     /// Containers
-    @IBOutlet var containerWebView: UIView!
+    @IBOutlet var containerWebView:            UIView!
+    @IBOutlet var containerOnScreenController: UIView!
 
     /// The hacked webView
     private var webView:   FullScreenWKWebView!
-    private let navigator: Navigator = Navigator()
+    private let navigator: Navigator       = Navigator()
 
     /// The menu controller
-    var menu: MenuController?   = nil
+    private var menu:      MenuController? = nil
 
     /// The bridge between controller and web view
-    let webViewControllerBridge = WebViewControllerBridge()
+    private let webViewControllerBridge    = WebViewControllerBridge()
+
+    private var  streamView:                     StreamView?
 
     /// By default hide the status bar
     override var prefersStatusBarHidden:         Bool {
@@ -72,6 +79,7 @@ class RootViewController: UIViewController {
         menuViewController.view.alpha = 0
         menuViewController.webController = webView
         menuViewController.overlayController = self
+        menuViewController.onScreenControllerUpdater = self
         menuViewController.view.frame = view.bounds
         menuViewController.willMove(toParent: self)
         addChild(menuViewController)
@@ -79,9 +87,55 @@ class RootViewController: UIViewController {
         menuViewController.didMove(toParent: self)
     }
 
+    /// View layout already done
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // stream config
+        let streamConfig      = StreamConfiguration()
+        // Controller support
+        let controllerSupport = ControllerSupport(config: streamConfig,
+                                                  presenceDelegate: self,
+                                                  controllerDataReceiver: webViewControllerBridge)
+        // stream view
+        let streamView        = StreamView(frame: containerOnScreenController.bounds)
+        streamView.setupStreamView(controllerSupport, interactionDelegate: self, config: streamConfig)
+        streamView.showOnScreenControls()
+        containerOnScreenController.addSubview(streamView)
+        streamView.fillParent()
+        self.streamView = streamView
+        updateOnScreenController(with: UserDefaults.standard.onScreenControlsLevel)
+    }
+
+    /// Update visibility of onscreen controller
+    func updateOnScreenController(with value: OnScreenControlsLevel) {
+        containerOnScreenController.alpha = value == .off ? 0 : 1
+        webViewControllerBridge.controlsSource = value == .off ? .external : .onScreen
+        streamView?.updateOnScreenControls()
+    }
+
     /// Tapped on the menu item
     @IBAction func onMenuButtonPressed(_ sender: Any) {
         menu?.show()
+    }
+}
+
+extension RootViewController: UserInteractionDelegate {
+    open func userInteractionBegan() {
+        Log.d("userInteractionBegan")
+    }
+
+    open func userInteractionEnded() {
+        Log.d("userInteractionEnded")
+    }
+}
+
+extension RootViewController: InputPresenceDelegate {
+    open func gamepadPresenceChanged() {
+        Log.d("gamepadPresenceChanged")
+    }
+
+    open func mousePresenceChanged() {
+        Log.d("gamepadPresenceChanged")
     }
 }
 
@@ -127,7 +181,7 @@ extension RootViewController: OverlayController {
 /// TODO extract this to a separate module with proper abstraction
 extension RootViewController: WKNavigationDelegate, WKUIDelegate {
 
-    /// When a stadia page finished loading, inject the controller override script
+    /// When a page finished loading, inject the controller override script
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // inject the script
         webView.injectControllerScript()
@@ -137,6 +191,10 @@ extension RootViewController: WKNavigationDelegate, WKUIDelegate {
                                                     canGoForward: webView.canGoForward))
         // save last visited url
         UserDefaults.standard.lastVisitedUrl = webView.url
+        // set user agent to iphone
+        // DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+        //     webView.customUserAgent = Navigator.Config.UserAgent.iPhone
+        // }
     }
 
     /// Handle popups

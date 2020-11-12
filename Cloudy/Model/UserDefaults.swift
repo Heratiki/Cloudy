@@ -3,18 +3,19 @@
 import Foundation
 
 /// Convenience access to persisted user defaults
-extension UserDefaults {
+@objc extension UserDefaults {
 
     /// Some keys for the user defaults
     private struct Config {
-        static let lastVisitedUrlKey  = "lastVisitedUrlKey"
-        static let manualUserAgent    = "manualUserAgent"
-        static let useManualUserAgent = "useManualUserAgent"
-        static let allowInlineMedia   = "allowInlineMedia"
+        static let lastVisitedUrlKey     = "lastVisitedUrlKey"
+        static let manualUserAgent       = "manualUserAgent"
+        static let useManualUserAgent    = "useManualUserAgent"
+        static let allowInlineMedia      = "allowInlineMedia"
+        static let onScreenControlsLevel = "onScreenControlsLevel"
     }
 
     /// Read / write the last visited url
-    var lastVisitedUrl:     URL? {
+    var       lastVisitedUrl:        URL? {
         get {
             UserDefaults.standard.url(forKey: Config.lastVisitedUrlKey)
         }
@@ -24,7 +25,7 @@ extension UserDefaults {
     }
 
     /// Read / write the manually overwritten user agent
-    var manualUserAgent:    String? {
+    var       manualUserAgent:       String? {
         get {
             UserDefaults.standard.string(forKey: Config.manualUserAgent)
         }
@@ -34,7 +35,7 @@ extension UserDefaults {
     }
 
     /// Read / write the flag if the manual user agent should be used
-    var useManualUserAgent: Bool {
+    var       useManualUserAgent:    Bool {
         get {
             if UserDefaults.standard.object(forKey: Config.useManualUserAgent) == nil {
                 return false
@@ -47,7 +48,7 @@ extension UserDefaults {
     }
 
     /// Read / write allow inline media enabled flag
-    var allowInlineMedia:   Bool {
+    var       allowInlineMedia:      Bool {
         get {
             if UserDefaults.standard.object(forKey: Config.allowInlineMedia) == nil {
                 return true
@@ -56,6 +57,19 @@ extension UserDefaults {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Config.allowInlineMedia)
+        }
+    }
+
+    /// Read / write flag for on screen controller
+    @objc var onScreenControlsLevel: OnScreenControlsLevel {
+        get {
+            if UserDefaults.standard.object(forKey: Config.onScreenControlsLevel) == nil {
+                return .off
+            }
+            return OnScreenControlsLevel(rawValue: UserDefaults.standard.integer(forKey: Config.onScreenControlsLevel))!
+        }
+        set {
+            UserDefaults.standard.set(newValue.rawValue, forKey: Config.onScreenControlsLevel)
         }
     }
 
